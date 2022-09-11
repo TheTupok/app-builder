@@ -1,5 +1,15 @@
 import {Injectable} from "@angular/core";
 
+interface IBoundingClientRect {
+  left: number
+  top: number
+  right: number
+  bottom: number
+  x: number
+  y: number
+  width: number
+  height: number
+}
 
 @Injectable({providedIn: "root"})
 
@@ -7,24 +17,28 @@ export class DragsService {
   constructor() {
   }
 
-  private pullElFromContainer(target: HTMLElement, event: MouseEvent){
+  public targetBoundingClientRect: IBoundingClientRect = null
+
+  private pullElFromContainer(target: HTMLElement, event: MouseEvent) {
     target.style.left = event.clientX + 'px';
     target.style.top = event.clientY + 'px';
     target.classList.remove('inContainer')
   }
 
   private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent) {
-    const shiftX = event.clientX - container.getBoundingClientRect().left + 'px';
-    const shiftY = event.clientY - container.getBoundingClientRect().top + 'px';
+    const shiftX = event.clientX - container.getBoundingClientRect().left - (this.targetBoundingClientRect.width/2);
+    const shiftY = event.clientY - container.getBoundingClientRect().top - (this.targetBoundingClientRect.height/2);
 
-    target.style.left = shiftX
-    target.style.top = shiftY
+    target.style.left = shiftX + 'px'
+    target.style.top = shiftY + 'px'
     target.classList.add('inContainer')
 
     container.appendChild(target)
   }
 
   public DragAndDrop(event: MouseEvent, target: any) {
+
+    this.targetBoundingClientRect = target.getBoundingClientRect();
 
     let workAreaDroppable: Element = null;
     let isWorkArea = false;
@@ -38,7 +52,7 @@ export class DragsService {
       isWorkArea = true
     }
 
-    if(target.classList.contains('inContainer')) {
+    if (target.classList.contains('inContainer')) {
       this.pullElFromContainer(target, event)
     }
 
@@ -47,8 +61,8 @@ export class DragsService {
 
     document.body.append(target);
 
-    let shiftX = event.clientX - target.getBoundingClientRect().left;
-    let shiftY = event.clientY - target.getBoundingClientRect().top;
+    let shiftX = event.clientX - this.targetBoundingClientRect.left;
+    let shiftY = event.clientY - this.targetBoundingClientRect.top;
     if (!isWorkArea) {
       shiftX = 0;
       shiftY = 0;
