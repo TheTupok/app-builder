@@ -25,12 +25,14 @@ export class RenderingDOMComponent implements OnInit {
       const resizeDiv = ['se', 'sw', 'ne', 'nw']
       for (let div of resizeDiv) {
         const resDiv = this.renderer.createElement('div')
+
         this.renderer.addClass(resDiv, `resizer`)
         this.renderer.addClass(resDiv, `${div}`)
         this.renderer.listen(
           resDiv,
           'mousedown',
           event => this.resizeComponentService.resizeComponent(event))
+
         this.renderer.appendChild(newComponent, resDiv)
       }
     } else {

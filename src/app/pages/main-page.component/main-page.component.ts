@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
-import {ModalService} from "../../services/modal.service";
 import {RenderingDOMComponent} from "../../components/rendering-dom/rendering-dom.component";
 
 
@@ -13,7 +12,6 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public dragsService: DragsService,
-    public modalService: ModalService,
     public render: RenderingDOMComponent
   ) {
   }
