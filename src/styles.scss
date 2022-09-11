@@ -32,6 +32,14 @@ $AppBuilder-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($AppBuilder-theme);
 
+* {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
