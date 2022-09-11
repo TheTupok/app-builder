@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {ResizeComponentService} from "../../../services/resize-component.service";
 
 @Component({
   selector: 'app-working-field',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkingFieldComponent implements OnInit {
 
-  constructor() { }
+  constructor(public resizeComponentService: ResizeComponentService,
+              public el: ElementRef,
+              public renderer: Renderer2
+  ) {
+  }
 
   ngOnInit(): void {
   }
-
 }

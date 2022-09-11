@@ -1,22 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MainPageComponentComponent } from './pages/main-page.component/main-page.component.component';
-import { ElementAreaComponent } from './components/workspace/element-area/element-area.component';
-import { WorkingFieldComponent } from './components/workspace/working-field/working-field.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MainPageComponent} from './pages/main-page.component/main-page.component';
+import {ElementAreaComponent} from './components/workspace/element-area/element-area.component';
+import {WorkingFieldComponent} from './components/workspace/working-field/working-field.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-import { PropertiesComponentTsComponent } from './components/workspace/properties.component.ts/properties.component.ts.component';
+import { RenderingDOMComponent } from './components/rendering-dom/rendering-dom.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponentComponent,
+    MainPageComponent,
     ElementAreaComponent,
     WorkingFieldComponent,
-    PropertiesComponentTsComponent,
+    RenderingDOMComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,8 @@ import { PropertiesComponentTsComponent } from './components/workspace/propertie
     BrowserAnimationsModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [RenderingDOMComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
