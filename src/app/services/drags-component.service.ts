@@ -6,20 +6,20 @@ export class DragsService {
   constructor() {
   }
 
-  private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent) {
+  private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent, shiftX: number, shiftY: number) {
     const containerX = container.getBoundingClientRect().left + 1; // 1px its border
     const containerY = container.getBoundingClientRect().top + 1;
 
-    target.style.left = event.clientX - containerX + 'px'
-    target.style.top = event.clientY - containerY + 'px'
+    target.style.left = event.clientX - containerX - shiftX + 'px'
+    target.style.top = event.clientY - containerY - shiftY + 'px'
     target.classList.add('inContainer')
 
     container.appendChild(target)
   }
 
   private pullElFromContainer(target: HTMLElement, event: MouseEvent) {
-    target.style.left = event.clientX + 'px';
-    target.style.top = event.clientY + 'px';
+    target.style.left = event.clientX - (event.clientX - target.getBoundingClientRect().left) + 'px';
+    target.style.top = event.clientY - (event.clientY - target.getBoundingClientRect().top) + 'px';
     target.classList.remove('inContainer')
   }
 
@@ -32,18 +32,17 @@ export class DragsService {
     let isContainerArea = false;
     let parentContainer: Element = null;
 
+    if (target.classList.contains('inContainer')) {
+      this.pullElFromContainer(target, event)
+    }
+
     if (target.classList.contains('inWorkingArea')) {
       target.remove()
       isWorkArea = true
     }
 
-    if (target.classList.contains('inContainer')) {
-      this.pullElFromContainer(target, event)
-    }
-
     target.style.position = 'absolute';
     target.style.zIndex = '1000';
-
     document.body.append(target);
 
     let shiftX = event.clientX - target.getBoundingClientRect().left;
@@ -105,7 +104,7 @@ export class DragsService {
           target.style.zIndex = ''
         }
         if (isContainerArea) {
-          this.addElToContainer(target, parentContainer, event)
+          this.addElToContainer(target, parentContainer, event, shiftX, shiftY)
         } else {
           workArea!.appendChild(target)
         }
