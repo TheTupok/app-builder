@@ -1,23 +1,21 @@
 import {Injectable} from "@angular/core";
 
-interface IBoundingClientRect {
-  left: number
-  top: number
-  right: number
-  bottom: number
-  x: number
-  y: number
-  width: number
-  height: number
-}
-
 @Injectable({providedIn: "root"})
 
 export class DragsService {
   constructor() {
   }
 
-  public targetBoundingClientRect: IBoundingClientRect = null
+  private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent) {
+    const containerX = container.getBoundingClientRect().left + 1; // 1px its border
+    const containerY = container.getBoundingClientRect().top + 1;
+
+    target.style.left = event.clientX - containerX + 'px'
+    target.style.top = event.clientY - containerY + 'px'
+    target.classList.add('inContainer')
+
+    container.appendChild(target)
+  }
 
   private pullElFromContainer(target: HTMLElement, event: MouseEvent) {
     target.style.left = event.clientX + 'px';
@@ -25,20 +23,7 @@ export class DragsService {
     target.classList.remove('inContainer')
   }
 
-  private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent) {
-    const shiftX = event.clientX - container.getBoundingClientRect().left - (this.targetBoundingClientRect.width/2);
-    const shiftY = event.clientY - container.getBoundingClientRect().top - (this.targetBoundingClientRect.height/2);
-
-    target.style.left = shiftX + 'px'
-    target.style.top = shiftY + 'px'
-    target.classList.add('inContainer')
-
-    container.appendChild(target)
-  }
-
   public DragAndDrop(event: MouseEvent, target: any) {
-
-    this.targetBoundingClientRect = target.getBoundingClientRect();
 
     let workAreaDroppable: Element = null;
     let isWorkArea = false;
@@ -61,14 +46,14 @@ export class DragsService {
 
     document.body.append(target);
 
-    let shiftX = event.clientX - this.targetBoundingClientRect.left;
-    let shiftY = event.clientY - this.targetBoundingClientRect.top;
+    let shiftX = event.clientX - target.getBoundingClientRect().left;
+    let shiftY = event.clientY - target.getBoundingClientRect().top;
     if (!isWorkArea) {
       shiftX = 0;
       shiftY = 0;
     }
 
-    moveAt(event.pageX, event.pageY)
+    moveAt(event.pageX, event.pageY);
 
     function moveAt(pageX: number, pageY: number) {
       target.style.left = pageX - shiftX + 'px';
