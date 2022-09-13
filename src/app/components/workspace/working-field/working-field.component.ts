@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ContextMenuComponent} from "../../modals/context-menu/context-menu.component";
 
 @Component({
   selector: 'app-working-field',
@@ -8,13 +7,7 @@ import {ContextMenuComponent} from "../../modals/context-menu/context-menu.compo
 })
 export class WorkingFieldComponent implements OnInit {
 
-  public targetContextMenu: HTMLElement
-
-  constructor(public contextMenuComponent: ContextMenuComponent) {
-  }
-
-  contextMenu(event: MouseEvent) {
-    this.targetContextMenu = this.contextMenuComponent.openContextMenu(event) as HTMLElement
+  constructor() {
   }
 
   ngOnInit(): void {

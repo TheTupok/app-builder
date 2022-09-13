@@ -8,9 +8,7 @@ import {ElementAreaComponent} from './components/workspace/element-area/element-
 import {WorkingFieldComponent} from './components/workspace/working-field/working-field.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-import { RenderingDOMComponent } from './components/rendering-dom/rendering-dom.component';
-import { ContextMenuComponent } from './components/modals/context-menu/context-menu.component';
-import { PropertiesComponent } from './components/modals/properties/properties.component';
+import {RenderingDOMComponent} from './components/rendering-dom/rendering-dom.component';
 
 
 @NgModule({
@@ -20,8 +18,6 @@ import { PropertiesComponent } from './components/modals/properties/properties.c
     ElementAreaComponent,
     WorkingFieldComponent,
     RenderingDOMComponent,
-    ContextMenuComponent,
-    PropertiesComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +25,7 @@ import { PropertiesComponent } from './components/modals/properties/properties.c
     BrowserAnimationsModule,
     DragDropModule
   ],
-  providers: [RenderingDOMComponent, ContextMenuComponent, PropertiesComponent],
+  providers: [RenderingDOMComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
