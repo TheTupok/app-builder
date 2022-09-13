@@ -62,6 +62,8 @@ export class DragsService {
     function onMouseMove(event: MouseEvent) {
       moveAt(event.pageX, event.pageY);
 
+      target.style.cursor = 'pointer'
+
       target.hidden = true;
       const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
       target.hidden = false;
@@ -99,6 +101,7 @@ export class DragsService {
       if (isWorkArea) {
         const workArea: HTMLDivElement = document.querySelector('.WorkingField')
         target.classList.add('inWorkingArea')
+        target.style.cursor = ''
         target.style.zIndex = '10'
         if (target.classList.contains('container')) {
           target.style.zIndex = ''
