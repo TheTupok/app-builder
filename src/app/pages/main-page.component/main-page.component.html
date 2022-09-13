@@ -1,6 +1,7 @@
 <app-element-area
-  (mousedown)="MouseClickEventComponent($event)"
+  (mousedown)="mouseClickEventComponent($event)"
 ></app-element-area>
 <app-working-field
-  (mousedown)="MouseClickEventComponent($event)"
+  (click)="clearForm()"
 ></app-working-field>
+<app-properties></app-properties>

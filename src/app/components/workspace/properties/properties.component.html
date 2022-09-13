@@ -1,0 +1,9 @@
+<form *ngIf="propertiesData" [formGroup]="editComponentForm">
+  <div>
+    <ul>
+      <li><p>TextContent</p><input formControlName="textContent" type="text"></li>
+      <li><p>FontSize</p><input formControlName="fontSize" type="text"></li>
+      <li><p>ColorText</p><input formControlName="colorText" type="text"></li>
+    </ul>
+  </div>
+</form>

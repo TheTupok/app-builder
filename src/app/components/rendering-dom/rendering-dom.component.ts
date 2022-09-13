@@ -1,5 +1,7 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, OnInit, Renderer2, ViewContainerRef} from '@angular/core';
 import {ResizeComponentService} from "../../services/resize-component.service";
+import {LabelComponent} from "../elements/label/label.component";
+import {DragsService} from "../../services/drags-component.service";
 
 
 @Component({
@@ -10,11 +12,19 @@ import {ResizeComponentService} from "../../services/resize-component.service";
 export class RenderingDOMComponent implements OnInit {
 
   constructor(private renderer: Renderer2,
-              public resizeComponentService: ResizeComponentService
+              public resizeComponentService: ResizeComponentService,
+              private viewContainerRef: ViewContainerRef,
+              public dragsService: DragsService
   ) {
   }
 
   ngOnInit(): void {
+  }
+
+  public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
+    if (target.classList.contains('movable')) {
+      this.dragsService.DragAndDrop(event, target)
+    }
   }
 
   public renderComponent(target: HTMLElement) {
@@ -36,8 +46,18 @@ export class RenderingDOMComponent implements OnInit {
         this.renderer.appendChild(newComponent, resDiv)
       }
     } else {
-      newComponent = this.renderer.createElement(target.textContent)
-      this.renderer.appendChild(newComponent, this.renderer.createText(target.textContent))
+
+    }
+    if (target.getAttribute('data-type') == 'app-label') {
+      const component = this.viewContainerRef.createComponent(LabelComponent)
+      this.renderer.addClass(component.location.nativeElement, 'movable')
+      this.renderer.listen(
+        component.location.nativeElement,
+        'mousedown',
+        event => this.mouseClickEventComponent(event, component.location.nativeElement)
+      )
+      component.instance.text = 'test'
+      return component.location.nativeElement
     }
     this.renderer.addClass(newComponent, 'movable')
     return newComponent

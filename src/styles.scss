@@ -1,3 +1,4 @@
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -105,26 +106,38 @@ body {
   z-index: 2;
 }
 
-.resizer.nw{
+.resizer.nw {
   top: -1px;
   left: -1px;
   cursor: nw-resize;
 }
 
-.resizer.ne{
+.resizer.ne {
   top: -1px;
   right: -1px;
   cursor: ne-resize;
 }
 
-.resizer.sw{
+.resizer.sw {
   bottom: -1px;
   left: -1px;
   cursor: sw-resize;
 }
 
-.resizer.se{
+.resizer.se {
   bottom: -1px;
   right: -1px;
   cursor: se-resize;
 }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

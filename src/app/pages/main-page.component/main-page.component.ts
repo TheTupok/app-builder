@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
 import {RenderingDOMComponent} from "../../components/rendering-dom/rendering-dom.component";
+import {PropertiesService} from "../../services/property.service";
 
 
 @Component({
@@ -13,6 +14,7 @@ export class MainPageComponent implements OnInit {
   constructor(
     public dragsService: DragsService,
     public render: RenderingDOMComponent,
+    private propertiesService: PropertiesService
   ) {
   }
 
@@ -20,15 +22,13 @@ export class MainPageComponent implements OnInit {
 
   }
 
-  public MouseClickEventComponent(event: MouseEvent) {
+  public mouseClickEventComponent(event: MouseEvent) {
     const target = event.target as HTMLElement;
+    const newTarget = this.render.renderComponent(target)
+    this.dragsService.DragAndDrop(event, newTarget)
+  }
 
-    if (target.classList.contains('sample')) {
-      const newTarget = this.render.renderComponent(target)
-      this.dragsService.DragAndDrop(event, newTarget)
-    }
-    if (target.classList.contains('movable')) {
-      this.dragsService.DragAndDrop(event, target)
-    }
+  clearForm() {
+    this.propertiesService.setData(null)
   }
 }

@@ -9,6 +9,10 @@ import {WorkingFieldComponent} from './components/workspace/working-field/workin
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {RenderingDOMComponent} from './components/rendering-dom/rendering-dom.component';
+import {MatBadgeModule} from "@angular/material/badge";
+import { PropertiesComponent } from './components/workspace/properties/properties.component';
+import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
+import { LabelComponent } from './components/elements/label/label.component';
 
 
 @NgModule({
@@ -18,14 +22,18 @@ import {RenderingDOMComponent} from './components/rendering-dom/rendering-dom.co
     ElementAreaComponent,
     WorkingFieldComponent,
     RenderingDOMComponent,
+    PropertiesComponent,
+    LabelComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    MatBadgeModule,
+    ReactiveFormsModule
   ],
-  providers: [RenderingDOMComponent],
+  providers: [RenderingDOMComponent, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule {
