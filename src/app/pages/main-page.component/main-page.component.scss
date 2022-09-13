@@ -9,3 +9,13 @@ app-working-field {
   width: 80%;
   float: right
 }
+
+app-properties {
+  position: absolute;
+  right: 0;
+  width: 15%;
+  height: 25%;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  z-index: 10;
+}

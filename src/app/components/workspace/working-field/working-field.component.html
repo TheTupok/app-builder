@@ -1,3 +1,10 @@
-<div class="MainWrapper WorkingField">
-
+<div class="MainWrapper WorkingField" (contextmenu)="contextMenu($event)">
+  <app-context-menu
+    *ngIf="this.contextMenuComponent.modalContextMenu"
+    [clientX]="contextMenuComponent.contextMenuX"
+    [clientY]="contextMenuComponent.contextMenuY"
+    [targetComponent]="this.targetContextMenu"
+  ></app-context-menu>
 </div>
+
+

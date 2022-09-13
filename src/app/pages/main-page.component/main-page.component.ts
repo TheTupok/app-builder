@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
 import {RenderingDOMComponent} from "../../components/rendering-dom/rendering-dom.component";
+import {ContextMenuComponent} from "../../components/modals/context-menu/context-menu.component";
 
 
 @Component({
@@ -12,7 +13,8 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public dragsService: DragsService,
-    public render: RenderingDOMComponent
+    public render: RenderingDOMComponent,
+    public contextMenuComponent: ContextMenuComponent
   ) {
   }
 
@@ -20,8 +22,13 @@ export class MainPageComponent implements OnInit {
 
   }
 
-  public MouseMoveEventComponent(event: MouseEvent) {
+  public MouseClickEventComponent(event: MouseEvent) {
     const target = event.target as HTMLElement;
+
+    if (!target.classList.contains('ctx-menu')) {
+      this.contextMenuComponent.closeContextMenu()
+    }
+
     if (target.classList.contains('sample')) {
       const newTarget = this.render.renderComponent(target)
       this.dragsService.DragAndDrop(event, newTarget)

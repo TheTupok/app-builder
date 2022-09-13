@@ -9,6 +9,8 @@ import {WorkingFieldComponent} from './components/workspace/working-field/workin
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import { RenderingDOMComponent } from './components/rendering-dom/rendering-dom.component';
+import { ContextMenuComponent } from './components/modals/context-menu/context-menu.component';
+import { PropertiesComponent } from './components/modals/properties/properties.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { RenderingDOMComponent } from './components/rendering-dom/rendering-dom.
     MainPageComponent,
     ElementAreaComponent,
     WorkingFieldComponent,
-    RenderingDOMComponent
+    RenderingDOMComponent,
+    ContextMenuComponent,
+    PropertiesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import { RenderingDOMComponent } from './components/rendering-dom/rendering-dom.
     BrowserAnimationsModule,
     DragDropModule
   ],
-  providers: [RenderingDOMComponent],
+  providers: [RenderingDOMComponent, ContextMenuComponent, PropertiesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
