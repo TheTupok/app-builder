@@ -8,11 +8,10 @@ import {ElementAreaComponent} from './components/workspace/element-area/element-
 import {WorkingFieldComponent} from './components/workspace/working-field/working-field.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-import {RenderingDOMComponent} from './components/rendering-dom/rendering-dom.component';
 import {MatBadgeModule} from "@angular/material/badge";
-import { PropertiesComponent } from './components/workspace/properties/properties.component';
+import {PropertiesComponent} from './components/workspace/properties/properties.component';
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
-import { LabelComponent } from './components/elements/label/label.component';
+import {LabelComponent} from './components/elements/label/label.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { LabelComponent } from './components/elements/label/label.component';
     MainPageComponent,
     ElementAreaComponent,
     WorkingFieldComponent,
-    RenderingDOMComponent,
     PropertiesComponent,
     LabelComponent,
   ],
@@ -33,7 +31,7 @@ import { LabelComponent } from './components/elements/label/label.component';
     MatBadgeModule,
     ReactiveFormsModule
   ],
-  providers: [RenderingDOMComponent, FormBuilder],
+  providers: [FormBuilder, WorkingFieldComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

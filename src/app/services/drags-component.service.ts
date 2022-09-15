@@ -24,12 +24,8 @@ export class DragsService {
   }
 
   public DragAndDrop(event: MouseEvent, target: any) {
-
-    let workAreaDroppable: Element = null;
     let isWorkArea = false;
 
-    let containerDroppable: Element = null;
-    let isContainerArea = false;
     let parentContainer: Element = null;
 
     if (target.classList.contains('inContainer')) {
@@ -61,56 +57,30 @@ export class DragsService {
 
     function onMouseMove(event: MouseEvent) {
       moveAt(event.pageX, event.pageY);
-
       target.style.cursor = 'pointer'
-
-      target.hidden = true;
-      const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-      target.hidden = false;
-
-      if (!elemBelow) return;
-
-      const droppableBelow = elemBelow.closest('.WorkingField');
-      if (workAreaDroppable != droppableBelow) {
-        if (workAreaDroppable) {
-          isWorkArea = false
-        }
-        workAreaDroppable = droppableBelow;
-        if (workAreaDroppable) {
-          isWorkArea = true
-        }
-      }
-
-      const containerBelow = elemBelow.closest('.container');
-      if (containerDroppable != containerBelow) {
-        if (containerDroppable) {
-          isContainerArea = false
-        }
-        containerDroppable = containerBelow;
-        if (containerDroppable) {
-          parentContainer = elemBelow
-          isContainerArea = true
-        }
-      }
     }
 
     document.addEventListener('mousemove', onMouseMove);
 
     target.onmouseup = (event: MouseEvent) => {
-      target.remove()
-      if (isWorkArea) {
-        const workArea: HTMLDivElement = document.querySelector('.WorkingField')
+      target.hidden = true
+      const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+      target.hidden = false
+
+      if (elemBelow.closest('.WorkingField')) {
         target.classList.add('inWorkingArea')
         target.style.cursor = ''
         target.style.zIndex = '10'
         if (target.classList.contains('container')) {
           target.style.zIndex = ''
         }
-        if (isContainerArea) {
+        if (elemBelow.closest('.container')) {
           this.addElToContainer(target, parentContainer, event, shiftX, shiftY)
         } else {
-          workArea!.appendChild(target)
+          elemBelow!.appendChild(target)
         }
+      } else {
+        target.remove()
       }
       document.removeEventListener('mousemove', onMouseMove);
       target.onmouseup = null;

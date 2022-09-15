@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
-import {RenderingDOMComponent} from "../../components/rendering-dom/rendering-dom.component";
 import {PropertiesService} from "../../services/property.service";
+import {WorkingFieldComponent} from "../../components/workspace/working-field/working-field.component";
 
 
 @Component({
@@ -13,7 +13,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public dragsService: DragsService,
-    public render: RenderingDOMComponent,
+    public workingFieldComponent: WorkingFieldComponent,
     private propertiesService: PropertiesService
   ) {
   }
@@ -24,8 +24,10 @@ export class MainPageComponent implements OnInit {
 
   public mouseClickEventComponent(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const newTarget = this.render.renderComponent(target)
-    this.dragsService.DragAndDrop(event, newTarget)
+    if(target.classList.contains('sample')){
+      const newTarget = this.workingFieldComponent.renderComponent(target)
+      this.dragsService.DragAndDrop(event, newTarget)
+    }
   }
 
   clearForm() {
