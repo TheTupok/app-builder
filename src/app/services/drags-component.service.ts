@@ -61,6 +61,7 @@ export class DragsService {
     document.addEventListener('mousemove', onMouseMove);
 
     target.onmouseup = (event: MouseEvent) => {
+      const workArea = document.querySelector('.WorkingField')
       target.hidden = true
       const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
       target.hidden = false
@@ -75,7 +76,7 @@ export class DragsService {
         if (elemBelow.closest('.container')) {
           this.addElToContainer(target, elemBelow, event, shiftX, shiftY)
         } else {
-          elemBelow!.appendChild(target)
+          workArea!.appendChild(target)
         }
       } else {
         target.remove()

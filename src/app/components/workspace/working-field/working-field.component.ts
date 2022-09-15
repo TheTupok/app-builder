@@ -41,6 +41,8 @@ export class WorkingFieldComponent implements OnInit {
     if (target.getAttribute('data-type') == 'app-container') {
       const component = this.viewContainerRef.createComponent(ContainerComponent)
       this.renderer.addClass(component.location.nativeElement, 'movable')
+      this.renderer.setStyle(component.location.nativeElement, 'width', '100px')
+      this.renderer.setStyle(component.location.nativeElement, 'height', '100px')
       this.renderer.listen(
         component.location.nativeElement,
         'mousedown',

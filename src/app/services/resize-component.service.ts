@@ -13,7 +13,7 @@ export class ResizeComponentService {
 
     this.isResizing = true;
     const currentResize = event.target as HTMLElement
-    let ele: any = currentResize.parentNode;
+    let ele: any = currentResize.parentNode.parentNode;
 
     const x = event.clientX;
     const y = event.clientY;
