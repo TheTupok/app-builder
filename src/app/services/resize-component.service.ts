@@ -7,8 +7,11 @@ export class ResizeComponentService {
   constructor() {
   }
 
+  public isResizing = false
+
   public resizeComponent(event: MouseEvent) {
 
+    this.isResizing = true;
     const currentResize = event.target as HTMLElement
     let ele: any = currentResize.parentNode;
 
@@ -22,7 +25,10 @@ export class ResizeComponentService {
     const top = parseInt(styles.top, 10);
 
     document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
+    document.addEventListener('mouseup', () => {
+      this.isResizing = false;
+      mouseUpHandler()
+    });
 
     function mouseMoveHandler(e: MouseEvent) {
       const dx = e.clientX - x;
@@ -46,7 +52,6 @@ export class ResizeComponentService {
         ele.style.left = `${left + dx}px`
       }
     }
-
 
     function mouseUpHandler() {
       document.removeEventListener('mousemove', mouseMoveHandler);

@@ -1,0 +1,6 @@
+<div [style]="getStyle()" (contextmenu)="setData()" class="container">
+  <div class="resizer ne" (mousedown)="resizeComponent($event)"></div>
+  <div class="resizer nw" (mousedown)="resizeComponent($event)"></div>
+  <div class="resizer sw" (mousedown)="resizeComponent($event)"></div>
+  <div class="resizer se" (mousedown)="resizeComponent($event)"></div>
+</div>

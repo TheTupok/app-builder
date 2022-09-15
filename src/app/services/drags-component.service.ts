@@ -26,8 +26,6 @@ export class DragsService {
   public DragAndDrop(event: MouseEvent, target: any) {
     let isWorkArea = false;
 
-    let parentContainer: Element = null;
-
     if (target.classList.contains('inContainer')) {
       this.pullElFromContainer(target, event)
     }
@@ -57,7 +55,7 @@ export class DragsService {
 
     function onMouseMove(event: MouseEvent) {
       moveAt(event.pageX, event.pageY);
-      target.style.cursor = 'pointer'
+      target.style.cursor = 'move'
     }
 
     document.addEventListener('mousemove', onMouseMove);
@@ -75,7 +73,7 @@ export class DragsService {
           target.style.zIndex = ''
         }
         if (elemBelow.closest('.container')) {
-          this.addElToContainer(target, parentContainer, event, shiftX, shiftY)
+          this.addElToContainer(target, elemBelow, event, shiftX, shiftY)
         } else {
           elemBelow!.appendChild(target)
         }

@@ -10,9 +10,9 @@ export class LabelComponent implements OnInit {
 
   @Input() text: string
 
-  public data: any = {
+  public propertiesData: any = {
     textContent: '',
-    fontSize: '50px',
+    fontSize: '18px',
     colorText: '',
   };
 
@@ -23,10 +23,10 @@ export class LabelComponent implements OnInit {
   }
 
   public setData() {
-    this.propetyService.setData(this.data)
+    this.propetyService.setData(this.propertiesData)
   }
 
-  public getStyle(){
-    return {...this.data}
+  public getStyle() {
+    return {...this.propertiesData}
   }
 }

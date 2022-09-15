@@ -12,6 +12,7 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {PropertiesComponent} from './components/workspace/properties/properties.component';
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
 import {LabelComponent} from './components/elements/label/label.component';
+import { ContainerComponent } from './components/elements/container/container.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {LabelComponent} from './components/elements/label/label.component';
     WorkingFieldComponent,
     PropertiesComponent,
     LabelComponent,
+    ContainerComponent,
   ],
   imports: [
     BrowserModule,
