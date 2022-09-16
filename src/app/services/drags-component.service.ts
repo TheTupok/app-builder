@@ -7,8 +7,8 @@ export class DragsService {
   }
 
   private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent, shiftX: number, shiftY: number) {
-    const containerX = container.getBoundingClientRect().left + 1; // 1px its border
-    const containerY = container.getBoundingClientRect().top + 1;
+    const containerX = container.getBoundingClientRect().left;
+    const containerY = container.getBoundingClientRect().top;
 
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
@@ -70,7 +70,7 @@ export class DragsService {
         target.classList.add('inWorkingArea')
         target.style.cursor = ''
         target.style.zIndex = '10'
-        if (target.classList.contains('container')) {
+        if (target.classList.contains('container-component')) {
           target.style.zIndex = ''
         }
         if (elemBelow.closest('.container')) {

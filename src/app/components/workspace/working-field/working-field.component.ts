@@ -20,9 +20,19 @@ export class WorkingFieldComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public countTarget = 0
+
   public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
-    if (target.classList.contains('movable') && !this.resizeComponentService.isResizing) {
-      this.dragsService.DragAndDrop(event, target)
+    if (event.button == 0) {
+      this.countTarget++
+      if (this.countTarget == 1) {
+        setTimeout(() => {
+          this.countTarget = 0;
+          if (target.classList.contains('movable') && !this.resizeComponentService.isResizing) {
+            this.dragsService.DragAndDrop(event, target)
+          }
+        }, 50);
+      }
     }
   }
 
@@ -41,6 +51,7 @@ export class WorkingFieldComponent implements OnInit {
     if (target.getAttribute('data-type') == 'app-container') {
       const component = this.viewContainerRef.createComponent(ContainerComponent)
       this.renderer.addClass(component.location.nativeElement, 'movable')
+      this.renderer.addClass(component.location.nativeElement, 'container-component')
       this.renderer.listen(
         component.location.nativeElement,
         'mousedown',
