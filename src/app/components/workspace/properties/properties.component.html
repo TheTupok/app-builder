@@ -5,10 +5,20 @@
       <li *ngIf="getStyle('placeholder')"><p>Placeholder</p><input formControlName="placeholder" type="text"></li>
       <li *ngIf="getStyle('fontSize')"><p>Font Size</p><input formControlName="fontSize" type="text"></li>
       <li *ngIf="getStyle('color')"><p>Color Text</p><input formControlName="color" type="color"></li>
-      <li *ngIf="getStyle('backgroundColor')"><p>Background Color</p><input formControlName="backgroundColor" type="color"></li>
+      <li *ngIf="getStyle('backgroundColor')"><p>Background Color</p><input formControlName="backgroundColor"
+                                                                            type="color"></li>
       <li *ngIf="getStyle('border')"><p>Border</p><input formControlName="border" type="text"></li>
       <li *ngIf="getStyle('borderRadius')"><p>Border Radius</p><input formControlName="borderRadius" type="text"></li>
-      <li *ngIf="getStyle('displayResize')"><p>Display Resize</p><input formControlName="displayResize" type="checkbox"></li>
+      <li *ngIf="getStyle('displayResize')"><p>Display Resize</p><input formControlName="displayResize" type="checkbox">
+      </li>
+      <li *ngIf="getStyle('fontFamily')">
+        <p>Font Family</p>
+        <select formControlName="fontFamily">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="Courier, monospace">Courier</option>
+          <option value="Times, Times New Roman, serif">Times</option>
+        </select>
+      </li>
     </ul>
   </div>
 </form>

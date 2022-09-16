@@ -13,6 +13,7 @@ export class LabelComponent implements OnInit {
     textContent: 'label',
     fontSize: '18px',
     color: '#000',
+    fontFamily: 'Arial, sans-serif'
   };
 
   constructor(private propetyService: PropertiesService) {
@@ -26,6 +27,7 @@ export class LabelComponent implements OnInit {
   }
 
   public getStyle() {
+    console.log(this.propertiesData)
     return {...this.propertiesData}
   }
 }

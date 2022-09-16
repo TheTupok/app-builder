@@ -14,8 +14,17 @@ export class PropertiesService {
     return this._data.asObservable()
   }
 
+  private count = 0
+
   setData(data: any) {
-    this._data.next(data)
+    this.count++
+    if (this.count == 1) {
+      setTimeout(() => {
+        this.count = 0;
+        this.openPanel()
+        this._data.next(data)
+      }, 100)
+    }
   }
 
   openPanel() {
@@ -26,6 +35,5 @@ export class PropertiesService {
   closePanel() {
     const panel = document.getElementById('propertiesPanel')
     panel.style.width = '0'
-    this.setData(null)
   }
 }

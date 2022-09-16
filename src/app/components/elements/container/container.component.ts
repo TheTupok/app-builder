@@ -22,6 +22,8 @@ export class ContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public count = 0
+
   public setData() {
     this.propetyService.setData(this.propertiesData)
   }

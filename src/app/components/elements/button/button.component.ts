@@ -16,6 +16,7 @@ export class ButtonComponent implements OnInit {
     color: '#000',
     border: '1px solid black',
     borderRadius: '20%',
+    fontFamily: 'Arial, sans-serif'
   };
 
   constructor(private propetyService: PropertiesService) {

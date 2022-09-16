@@ -17,9 +17,9 @@ export class PropertiesComponent implements OnInit {
 
   public propertiesData: any
   public propertiesListComponent: any = {
-    'app-label': ['textContent', 'fontSize', 'color'],
-    'app-input': ['textContent', 'placeholder'],
-    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius'],
+    'app-label': ['textContent', 'fontSize', 'color', 'fontFamily'],
+    'app-input': ['textContent', 'placeholder', 'fontFamily'],
+    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius', 'fontFamily'],
     'app-container': ['backgroundColor', 'displayResize']
   }
 
@@ -47,7 +47,8 @@ export class PropertiesComponent implements OnInit {
       backgroundColor: '',
       border: '',
       borderRadius: '',
-      displayResize: ''
+      displayResize: '',
+      fontFamily: ''
     })
 
     this.editComponentForm.valueChanges.subscribe(data => {
@@ -63,7 +64,6 @@ export class PropertiesComponent implements OnInit {
   }
 
   getStyle(style: string) {
-    this.propertiesService.openPanel()
     const component = this.editComponentForm.value['component']
     return this.propertiesListComponent[component].includes(style)
   }

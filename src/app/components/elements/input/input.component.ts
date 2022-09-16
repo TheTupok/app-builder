@@ -18,6 +18,7 @@ export class InputComponent implements OnInit {
     component: 'app-input',
     textContent: '',
     placeholder: 'placeholder',
+    fontFamily: 'Arial, sans-serif'
   };
 
   public setData() {
