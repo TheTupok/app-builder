@@ -10,11 +10,22 @@ export class PropertiesService {
 
   private _data: Subject<any> = new Subject()
 
-  getData(): Observable<any>{
+  getData(): Observable<any> {
     return this._data.asObservable()
   }
 
-  setData(data: any){
+  setData(data: any) {
     this._data.next(data)
+  }
+
+  openPanel() {
+    const panel = document.getElementById('propertiesPanel')
+    panel.style.width = '200px'
+  }
+
+  closePanel() {
+    const panel = document.getElementById('propertiesPanel')
+    panel.style.width = '0'
+    this.setData(null)
   }
 }

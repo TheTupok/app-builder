@@ -23,9 +23,9 @@ export class MainPageComponent implements OnInit {
   }
 
   public mouseClickEventComponent(event: MouseEvent) {
-    if(event.button == 0) {
+    if (event.button == 0) {
       const target = event.target as HTMLElement;
-      if(target.classList.contains('sample')){
+      if (target.classList.contains('sample')) {
         const newTarget = this.workingFieldComponent.renderComponent(target)
         this.dragsService.DragAndDrop(event, newTarget)
       }
@@ -33,6 +33,6 @@ export class MainPageComponent implements OnInit {
   }
 
   clearForm() {
-    this.propertiesService.setData(null)
+    this.propertiesService.closePanel();
   }
 }

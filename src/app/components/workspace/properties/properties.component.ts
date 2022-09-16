@@ -63,6 +63,7 @@ export class PropertiesComponent implements OnInit {
   }
 
   getStyle(style: string) {
+    this.propertiesService.openPanel()
     const component = this.editComponentForm.value['component']
     return this.propertiesListComponent[component].includes(style)
   }

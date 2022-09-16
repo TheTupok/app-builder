@@ -11,10 +11,15 @@ app-working-field {
 }
 
 app-properties {
-  position: absolute;
+  width: 0;
+  position: fixed;
+  top: 0;
   right: 0;
-  width: 15%;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-  z-index: 10;
+  border-bottom-left-radius: 20px;
+  z-index: 20;
+  transition: 0.5s;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
 }
