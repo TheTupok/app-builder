@@ -10,6 +10,10 @@ npm install, npm start. Open browser url http://localhost:4200
 
 at each corner there are elements that make it possible to increase the component
 
+# Component Properties
+
+It is possible to change some properties of components. Each element has different properties. Clicking the right mouse button opens a field for changing the properties of the component.
+
 # Render new elements
 
 New elements are created through the angular - Renderer2 library. Also, new components receive standard classes and an event listener for further work.
