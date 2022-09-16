@@ -33,10 +33,15 @@ export class PropertiesComponent implements OnInit {
     this.editComponentForm = this.fb.group({
       textContent: '',
       fontSize: '',
-      colorText: ''
+      color: '',
+      backgroundColor: '',
+      border: '',
+      borderRadius: '',
+      displayResize: ''
     })
+
     this.editComponentForm.valueChanges.subscribe(data => {
-      if(!this.propertiesData || !this.clearForm){
+      if (!this.propertiesData || !this.clearForm) {
         return
       }
       for (const [key, value] of Object.entries(data)) {

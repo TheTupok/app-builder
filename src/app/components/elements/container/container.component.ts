@@ -10,7 +10,8 @@ import {ResizeComponentService} from "../../../services/resize-component.service
 export class ContainerComponent implements OnInit {
 
   public propertiesData: any = {
-    backgroundColor: '',
+    backgroundColor: '#FFF',
+    displayResize: true
   };
 
   constructor(private propetyService: PropertiesService,

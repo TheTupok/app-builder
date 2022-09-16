@@ -12,7 +12,9 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {PropertiesComponent} from './components/workspace/properties/properties.component';
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
 import {LabelComponent} from './components/elements/label/label.component';
-import { ContainerComponent } from './components/elements/container/container.component';
+import {ContainerComponent} from './components/elements/container/container.component';
+import {ButtonComponent} from './components/elements/button/button.component';
+import {InputComponent} from './components/elements/input/input.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ContainerComponent } from './components/elements/container/container.co
     PropertiesComponent,
     LabelComponent,
     ContainerComponent,
+    ButtonComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { ContainerComponent } from './components/elements/container/container.co
     MatBadgeModule,
     ReactiveFormsModule
   ],
-  providers: [FormBuilder, WorkingFieldComponent ],
+  providers: [FormBuilder, WorkingFieldComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

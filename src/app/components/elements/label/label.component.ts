@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
 
 @Component({
@@ -8,12 +8,10 @@ import {PropertiesService} from "../../../services/property.service";
 })
 export class LabelComponent implements OnInit {
 
-  @Input() text: string
-
   public propertiesData: any = {
-    textContent: '',
+    textContent: 'label',
     fontSize: '18px',
-    colorText: '',
+    color: '#000',
   };
 
   constructor(private propetyService: PropertiesService) {

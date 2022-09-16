@@ -23,10 +23,12 @@ export class MainPageComponent implements OnInit {
   }
 
   public mouseClickEventComponent(event: MouseEvent) {
-    const target = event.target as HTMLElement;
-    if(target.classList.contains('sample')){
-      const newTarget = this.workingFieldComponent.renderComponent(target)
-      this.dragsService.DragAndDrop(event, newTarget)
+    if(event.button == 0) {
+      const target = event.target as HTMLElement;
+      if(target.classList.contains('sample')){
+        const newTarget = this.workingFieldComponent.renderComponent(target)
+        this.dragsService.DragAndDrop(event, newTarget)
+      }
     }
   }
 
