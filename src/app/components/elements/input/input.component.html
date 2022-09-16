@@ -1,3 +1,6 @@
 <div (contextmenu)="setData()">
-  <input [style]="getStyle()" placeholder="{{ this.propertiesData.textContent }}" type="text">
+  <input [style]="getStyle()"
+         placeholder="{{ this.propertiesData.placeholder }}"
+         value="{{ this.propertiesData.textContent }}"
+         type="text">
 </div>

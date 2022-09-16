@@ -34,7 +34,7 @@ export class WorkingFieldComponent implements OnInit {
           if (target.classList.contains('movable') && !this.resizeComponentService.isResizing) {
             this.dragsService.DragAndDrop(event, target)
           }
-        }, 50);
+        }, 10);
       }
     }
   }

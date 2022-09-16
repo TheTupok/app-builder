@@ -16,7 +16,15 @@ export class PropertiesComponent implements OnInit {
   }
 
   public propertiesData: any
+  public propertiesListComponent: any = {
+    'app-label': ['textContent', 'fontSize', 'color'],
+    'app-input': ['textContent', 'placeholder'],
+    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius'],
+    'app-container': ['backgroundColor', 'displayResize']
+  }
+
   private clearForm: boolean = false
+
 
   ngOnInit(): void {
     this._createForm()
@@ -31,7 +39,9 @@ export class PropertiesComponent implements OnInit {
 
   private _createForm() {
     this.editComponentForm = this.fb.group({
+      component: '',
       textContent: '',
+      placeholder: '',
       fontSize: '',
       color: '',
       backgroundColor: '',
@@ -50,5 +60,10 @@ export class PropertiesComponent implements OnInit {
         }
       }
     })
+  }
+
+  getStyle(style: string) {
+    const component = this.editComponentForm.value['component']
+    return this.propertiesListComponent[component].includes(style)
   }
 }

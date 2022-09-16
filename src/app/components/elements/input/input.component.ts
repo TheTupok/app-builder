@@ -15,7 +15,9 @@ export class InputComponent implements OnInit {
   }
 
   public propertiesData: any = {
-    textContent: 'placeholder'
+    component: 'app-input',
+    textContent: '',
+    placeholder: 'placeholder',
   };
 
   public setData() {

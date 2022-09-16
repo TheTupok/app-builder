@@ -9,6 +9,7 @@ import {PropertiesService} from "../../../services/property.service";
 export class ButtonComponent implements OnInit {
 
   public propertiesData: any = {
+    component: 'app-button',
     textContent: 'button',
     fontSize: '18px',
     backgroundColor: 'gray',

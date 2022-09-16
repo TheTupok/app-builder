@@ -9,6 +9,7 @@ import {PropertiesService} from "../../../services/property.service";
 export class LabelComponent implements OnInit {
 
   public propertiesData: any = {
+    component: 'app-label',
     textContent: 'label',
     fontSize: '18px',
     color: '#000',

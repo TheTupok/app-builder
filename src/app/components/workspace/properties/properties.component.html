@@ -1,13 +1,14 @@
 <form *ngIf="propertiesData" [formGroup]="editComponentForm">
   <div>
     <ul>
-      <li><p>Text Content</p><input formControlName="textContent" type="text"></li>
-      <li><p>Font Size</p><input formControlName="fontSize" type="text"></li>
-      <li><p>Color Text</p><input formControlName="color" type="color"></li>
-      <li><p>Background Color</p><input formControlName="backgroundColor" type="color"></li>
-      <li><p>Border</p><input formControlName="border" type="text"></li>
-      <li><p>Border Radius</p><input formControlName="borderRadius" type="text"></li>
-      <li><p>Display Resize</p><input formControlName="displayResize" type="checkbox"></li>
+      <li *ngIf="getStyle('textContent')"><p>Text Content</p><input formControlName="textContent" type="text"></li>
+      <li *ngIf="getStyle('placeholder')"><p>Placeholder</p><input formControlName="placeholder" type="text"></li>
+      <li *ngIf="getStyle('fontSize')"><p>Font Size</p><input formControlName="fontSize" type="text"></li>
+      <li *ngIf="getStyle('color')"><p>Color Text</p><input formControlName="color" type="color"></li>
+      <li *ngIf="getStyle('backgroundColor')"><p>Background Color</p><input formControlName="backgroundColor" type="color"></li>
+      <li *ngIf="getStyle('border')"><p>Border</p><input formControlName="border" type="text"></li>
+      <li *ngIf="getStyle('borderRadius')"><p>Border Radius</p><input formControlName="borderRadius" type="text"></li>
+      <li *ngIf="getStyle('displayResize')"><p>Display Resize</p><input formControlName="displayResize" type="checkbox"></li>
     </ul>
   </div>
 </form>
