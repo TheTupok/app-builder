@@ -39,46 +39,35 @@ export class WorkingFieldComponent implements OnInit {
     }
   }
 
+  public addMainPropertiesComponent(target: HTMLElement) {
+    this.renderer.addClass(target, 'movable')
+    this.renderer.listen(
+      target,
+      'mousedown',
+      event => this.mouseClickEventComponent(event, target)
+    )
+  }
+
   public renderComponent(target: HTMLElement) {
     if (target.getAttribute('data-type') == 'app-label') {
       const component = this.viewContainerRef.createComponent(LabelComponent)
-      this.renderer.addClass(component.location.nativeElement, 'movable')
-      this.renderer.listen(
-        component.location.nativeElement,
-        'mousedown',
-        event => this.mouseClickEventComponent(event, component.location.nativeElement)
-      )
+      this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-container') {
       const component = this.viewContainerRef.createComponent(ContainerComponent)
-      this.renderer.addClass(component.location.nativeElement, 'movable')
       this.renderer.addClass(component.location.nativeElement, 'container-component')
-      this.renderer.listen(
-        component.location.nativeElement,
-        'mousedown',
-        event => this.mouseClickEventComponent(event, component.location.nativeElement)
-      )
+      this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-button') {
       const component = this.viewContainerRef.createComponent(ButtonComponent)
-      this.renderer.addClass(component.location.nativeElement, 'movable')
-      this.renderer.listen(
-        component.location.nativeElement,
-        'mousedown',
-        event => this.mouseClickEventComponent(event, component.location.nativeElement)
-      )
+      this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-input') {
       const component = this.viewContainerRef.createComponent(InputComponent)
-      this.renderer.addClass(component.location.nativeElement, 'movable')
-      this.renderer.listen(
-        component.location.nativeElement,
-        'mousedown',
-        event => this.mouseClickEventComponent(event, component.location.nativeElement)
-      )
+      this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }
   }

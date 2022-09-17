@@ -23,7 +23,7 @@ export class DragsService {
     target.classList.remove('inContainer')
   }
 
-  public DragAndDrop(event: MouseEvent, target: any) {
+  public DragAndDrop(event: MouseEvent, target: HTMLElement) {
     let isWorkArea = false;
 
     if (target.classList.contains('inContainer')) {
