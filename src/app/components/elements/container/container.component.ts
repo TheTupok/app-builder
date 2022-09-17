@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
 import {ResizeComponentService} from "../../../services/resize-component.service";
+import {IDataProperties} from "../../../models/IDataProperties";
 
 @Component({
   selector: 'app-container',
@@ -9,7 +10,7 @@ import {ResizeComponentService} from "../../../services/resize-component.service
 })
 export class ContainerComponent implements OnInit {
 
-  public propertiesData: any = {
+  public propertiesData: IDataProperties = {
     component: 'app-container',
     backgroundColor: '#FFF',
     displayResize: true

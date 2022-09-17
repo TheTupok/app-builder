@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
+import {IDataProperties} from "../../../models/IDataProperties";
 
 @Component({
   selector: 'app-label',
@@ -8,7 +9,7 @@ import {PropertiesService} from "../../../services/property.service";
 })
 export class LabelComponent implements OnInit {
 
-  public propertiesData: any = {
+  public propertiesData: IDataProperties = {
     component: 'app-label',
     textContent: 'label',
     fontSize: '18px',
@@ -27,7 +28,6 @@ export class LabelComponent implements OnInit {
   }
 
   public getStyle() {
-    console.log(this.propertiesData)
     return {...this.propertiesData}
   }
 }

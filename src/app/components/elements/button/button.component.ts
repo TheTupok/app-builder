@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
+import {IDataProperties} from "../../../models/IDataProperties";
 
 @Component({
   selector: 'app-button',
@@ -8,7 +9,7 @@ import {PropertiesService} from "../../../services/property.service";
 })
 export class ButtonComponent implements OnInit {
 
-  public propertiesData: any = {
+  public propertiesData: IDataProperties = {
     component: 'app-button',
     textContent: 'button',
     fontSize: '18px',

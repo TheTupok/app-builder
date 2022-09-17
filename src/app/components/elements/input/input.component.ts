@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
+import {IDataProperties} from "../../../models/IDataProperties";
 
 @Component({
   selector: 'app-input',
@@ -14,7 +15,7 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public propertiesData: any = {
+  public propertiesData: IDataProperties = {
     component: 'app-input',
     textContent: '',
     placeholder: 'placeholder',
