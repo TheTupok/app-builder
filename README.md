@@ -2,7 +2,7 @@
 
 Applications can add, resize, and remove components. You can add components by selecting the desired template and dragging it to the workspace
 
-#How to start
+# How to start
 
 npm install, npm start. Open browser url http://localhost:4200
 
