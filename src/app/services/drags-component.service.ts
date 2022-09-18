@@ -31,7 +31,6 @@ export class DragsService {
     }
 
     if (target.classList.contains('inWorkingArea')) {
-      target.remove()
       isWorkArea = true
     }
 

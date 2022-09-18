@@ -12,7 +12,7 @@ export class ContainerComponent implements OnInit {
 
   public propertiesData: IDataProperties = {
     component: 'app-container',
-    backgroundColor: '#FFF',
+    backgroundColor: '#EBF0F2',
     displayResize: true
   };
 

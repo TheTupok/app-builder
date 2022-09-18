@@ -13,7 +13,7 @@ export class ButtonComponent implements OnInit {
     component: 'app-button',
     textContent: 'button',
     fontSize: '18px',
-    backgroundColor: 'gray',
+    backgroundColor: '#6EE768',
     color: '#000',
     border: '1px solid black',
     borderRadius: '20%',
