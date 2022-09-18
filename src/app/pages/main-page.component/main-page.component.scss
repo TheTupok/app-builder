@@ -1,13 +1,15 @@
 app-element-area {
   display: inline-block;
-  width: 20%;
+  width: 15%;
   float: left;
+  background-color: #D0D8D9;
 }
 
 app-working-field {
   display: inline-block;
-  width: 80%;
-  float: right
+  width: 85%;
+  float: right;
+  background-color: #EBF0F2;
 }
 
 app-properties {
@@ -16,11 +18,11 @@ app-properties {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: white;
-  border-left: 1px solid black;
-  border-radius: 10px;
+  background-color: #D0D8D9;
+  border-left: 1px solid #2C3740;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
   z-index: 20;
   transition: 0.5s;
-  -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
 }
