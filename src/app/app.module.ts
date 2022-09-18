@@ -15,6 +15,7 @@ import {LabelComponent} from './components/elements/label/label.component';
 import {ContainerComponent} from './components/elements/container/container.component';
 import {ButtonComponent} from './components/elements/button/button.component';
 import {InputComponent} from './components/elements/input/input.component';
+import {TextareaComponent} from './components/elements/textarea/textarea.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {InputComponent} from './components/elements/input/input.component';
     ContainerComponent,
     ButtonComponent,
     InputComponent,
+    TextareaComponent
   ],
   imports: [
     BrowserModule,

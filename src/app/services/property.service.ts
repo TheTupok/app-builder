@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from "rxjs";
+import {IDataProperties} from "../models/IDataProperties";
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,15 @@ export class PropertiesService {
   constructor() {
   }
 
-  private _data: Subject<any> = new Subject()
+  private _data: Subject<IDataProperties> = new Subject()
 
-  getData(): Observable<any> {
+  getData(): Observable<IDataProperties> {
     return this._data.asObservable()
   }
 
   private count = 0
 
-  setData(data: any) {
+  setData(data: IDataProperties) {
     this.count++
     if (this.count == 1) {
       setTimeout(() => {
@@ -25,6 +26,17 @@ export class PropertiesService {
         this._data.next(data)
       }, 100)
     }
+  }
+
+  returnModifiedText(data: IDataProperties) {
+    if (data.fontWeight) data.fontWeight = 'bold'
+    if (!data.fontWeight) data.fontWeight = ''
+    if (data.fontStyle) data.fontStyle = 'italic'
+    if (!data.fontStyle) data.fontStyle = ''
+    if (data.textDecoration) data.textDecoration = 'underline'
+    if (!data.textDecoration) data.textDecoration = ''
+
+    return data
   }
 
   openPanel() {

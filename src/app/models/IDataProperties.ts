@@ -1,12 +1,15 @@
 export interface IDataProperties {
   component: string
   textContent?: string
-  placeholder?: string
   fontSize?: string
+  fontWeight?: string
+  fontStyle?: string
+  textDecoration?: string
+  fontFamily?: string
   color?: string
   backgroundColor?: string
   border?: string
   borderRadius?: string
+  placeholder?: string
   displayResize?: boolean
-  fontFamily?: string
 }

@@ -1,15 +1,13 @@
 <form *ngIf="propertiesData" [formGroup]="editComponentForm">
   <div>
     <ul>
-      <li *ngIf="getStyle('textContent')"><p>Text Content</p><input formControlName="textContent" type="text"></li>
-      <li *ngIf="getStyle('placeholder')"><p>Placeholder</p><input formControlName="placeholder" type="text"></li>
-      <li *ngIf="getStyle('fontSize')"><p>Font Size</p><input formControlName="fontSize" type="text"></li>
-      <li *ngIf="getStyle('color')"><p>Color Text</p><input formControlName="color" type="color"></li>
-      <li *ngIf="getStyle('backgroundColor')"><p>Background Color</p><input formControlName="backgroundColor"
-                                                                            type="color"></li>
-      <li *ngIf="getStyle('border')"><p>Border</p><input formControlName="border" type="text"></li>
-      <li *ngIf="getStyle('borderRadius')"><p>Border Radius</p><input formControlName="borderRadius" type="text"></li>
-      <li *ngIf="getStyle('displayResize')"><p>Display Resize</p><input formControlName="displayResize" type="checkbox">
+      <li *ngIf="getStyle('textContent')">
+        <p>Text Content</p>
+        <input formControlName="textContent" type="text">
+      </li>
+      <li *ngIf="getStyle('fontSize')">
+        <p>Font Size</p>
+        <input formControlName="fontSize" type="text">
       </li>
       <li *ngIf="getStyle('fontFamily')">
         <p>Font Family</p>
@@ -18,6 +16,38 @@
           <option value="Courier, monospace">Courier</option>
           <option value="Times, Times New Roman, serif">Times</option>
         </select>
+      </li>
+      <li *ngIf="getStyle('textModification')">
+        <p>Bold</p>
+        <input formControlName="fontWeight" type="checkbox">
+        <p>Cursive</p>
+        <input formControlName="fontStyle" type="checkbox">
+        <p>Underlined</p>
+        <input formControlName="textDecoration" type="checkbox">
+      </li>
+      <li *ngIf="getStyle('color')">
+        <p>Color Text</p>
+        <input formControlName="color" type="color">
+      </li>
+      <li *ngIf="getStyle('backgroundColor')">
+        <p>Background Color</p>
+        <input formControlName="backgroundColor" type="color">
+      </li>
+      <li *ngIf="getStyle('border')">
+        <p>Border</p>
+        <input formControlName="border" type="text">
+      </li>
+      <li *ngIf="getStyle('borderRadius')">
+        <p>Border Radius</p>
+        <input formControlName="borderRadius" type="text">
+      </li>
+      <li *ngIf="getStyle('displayResize')">
+        <p>Display Resize</p>
+        <input formControlName="displayResize" type="checkbox">
+      </li>
+      <li *ngIf="getStyle('placeholder')">
+        <p>Placeholder</p>
+        <input formControlName="placeholder" type="text">
       </li>
     </ul>
   </div>

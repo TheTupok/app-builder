@@ -17,9 +17,11 @@ export class InputComponent implements OnInit {
 
   public propertiesData: IDataProperties = {
     component: 'app-input',
-    textContent: '',
     placeholder: 'placeholder',
-    fontFamily: 'Arial, sans-serif'
+    fontFamily: 'Arial, sans-serif',
+    fontWeight: '',
+    fontStyle: '',
+    textDecoration: '',
   };
 
   public setData() {
@@ -27,6 +29,7 @@ export class InputComponent implements OnInit {
   }
 
   public getStyle() {
+    this.propertiesData = this.propetyService.returnModifiedText(this.propertiesData)
     return {...this.propertiesData}
   }
 }

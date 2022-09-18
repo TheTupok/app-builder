@@ -13,11 +13,14 @@ export class ButtonComponent implements OnInit {
     component: 'app-button',
     textContent: 'button',
     fontSize: '18px',
+    fontFamily: 'Arial, sans-serif',
+    fontWeight: '',
+    fontStyle: '',
+    textDecoration: '',
     backgroundColor: '#6EE768',
     color: '#000',
     border: '1px solid black',
     borderRadius: '20%',
-    fontFamily: 'Arial, sans-serif'
   };
 
   constructor(private propetyService: PropertiesService) {
@@ -31,6 +34,7 @@ export class ButtonComponent implements OnInit {
   }
 
   public getStyle() {
+    this.propertiesData = this.propetyService.returnModifiedText(this.propertiesData)
     return {...this.propertiesData}
   }
 }

@@ -5,6 +5,8 @@ import {ContainerComponent} from "../../elements/container/container.component";
 import {ResizeComponentService} from "../../../services/resize-component.service";
 import {ButtonComponent} from "../../elements/button/button.component";
 import {InputComponent} from "../../elements/input/input.component";
+import {TextareaComponent} from "../../elements/textarea/textarea.component";
+
 
 @Component({
   selector: 'app-working-field',
@@ -26,7 +28,7 @@ export class WorkingFieldComponent implements OnInit {
   public countTarget = 0
 
   public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
-    if (event.button == 0) {
+    if (event.button == 0 && !event.altKey) {
       this.countTarget++
       if (this.countTarget == 1) {
         setTimeout(() => {
@@ -67,6 +69,11 @@ export class WorkingFieldComponent implements OnInit {
     }
     if (target.getAttribute('data-type') == 'app-input') {
       const component = this.viewContainerRef.createComponent(InputComponent)
+      this.addMainPropertiesComponent(component.location.nativeElement)
+      return component.location.nativeElement
+    }
+    if (target.getAttribute('data-type') == 'app-textarea') {
+      const component = this.viewContainerRef.createComponent(TextareaComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }

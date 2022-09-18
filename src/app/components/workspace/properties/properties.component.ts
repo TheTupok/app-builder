@@ -17,17 +17,19 @@ export class PropertiesComponent implements OnInit {
 
   public propertiesData: any
   public propertiesListComponent: any = {
-    'app-label': ['textContent', 'fontSize', 'color', 'fontFamily'],
-    'app-input': ['textContent', 'placeholder', 'fontFamily'],
-    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius', 'fontFamily'],
-    'app-container': ['backgroundColor', 'displayResize']
+    'app-label': ['textContent', 'fontSize', 'color', 'fontFamily', 'textModification'],
+    'app-input': ['placeholder', 'fontFamily', 'textModification'],
+    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius', 'fontFamily', 'textModification'],
+    'app-container': ['backgroundColor', 'displayResize'],
+    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification']
   }
 
   private clearForm: boolean = false
 
 
   ngOnInit(): void {
-    this._createForm()
+    this._createEditForm()
+
     this.propertiesService.getData().subscribe(data => {
       this.clearForm = false
       this.editComponentForm.reset()
@@ -37,18 +39,22 @@ export class PropertiesComponent implements OnInit {
     })
   }
 
-  private _createForm() {
+
+  private _createEditForm() {
     this.editComponentForm = this.fb.group({
       component: '',
       textContent: '',
-      placeholder: '',
       fontSize: '',
+      fontFamily: '',
+      fontWeight: '',
+      fontStyle: '',
+      textDecoration: '',
       color: '',
       backgroundColor: '',
       border: '',
       borderRadius: '',
-      displayResize: '',
-      fontFamily: ''
+      placeholder: '',
+      displayResize: ''
     })
 
     this.editComponentForm.valueChanges.subscribe(data => {
