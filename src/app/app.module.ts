@@ -16,6 +16,9 @@ import {ContainerComponent} from './components/elements/container/container.comp
 import {ButtonComponent} from './components/elements/button/button.component';
 import {InputComponent} from './components/elements/input/input.component';
 import {TextareaComponent} from './components/elements/textarea/textarea.component';
+import {MatButtonModule} from "@angular/material/button";
+import {InfoModalComponent} from './components/modals/info-modal/info-modal.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import {TextareaComponent} from './components/elements/textarea/textarea.compone
     ContainerComponent,
     ButtonComponent,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
+    InfoModalComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import {TextareaComponent} from './components/elements/textarea/textarea.compone
     BrowserAnimationsModule,
     DragDropModule,
     MatBadgeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [FormBuilder, WorkingFieldComponent],
   bootstrap: [AppComponent]

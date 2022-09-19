@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {InfoModalComponent} from "../../modals/info-modal/info-modal.component";
 
 @Component({
   selector: 'app-element-area',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElementAreaComponent implements OnInit {
 
-  constructor(
-  ) { }
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
 
+  openDialogInfo() {
+    this.dialog.open(InfoModalComponent);
+  }
 }

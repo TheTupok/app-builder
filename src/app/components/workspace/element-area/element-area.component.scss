@@ -1,4 +1,5 @@
 .MainWrapper {
+  position: relative;
   min-height: 100vh;
   border-right: 1px solid #2C3740;
 }
@@ -62,4 +63,23 @@ nav label {
   -webkit-transform: translateY(0px) translateX(0px);
   -moz-transform: translateY(0px) translateX(0px);
   transform: translateY(0px) translateX(0px);
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.info button {
+  border: 1px solid deepskyblue;
+  border-radius: 50%;
+  text-align: center;
+  margin: 10px;
+  padding: 10px 10px;
+  transition: 0.3s;
+}
+
+.info button:hover {
+  background-color: deepskyblue;
 }
