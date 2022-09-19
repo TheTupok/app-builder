@@ -61,6 +61,12 @@
         </select>
         <button (click)="deleteOptionSelect()" class="input-btn">+</button>
       </li>
+      <li *ngIf="getStyle('AltSrcImage')">
+        <p>Alt image</p>
+        <input formControlName="altImage" type="text">
+        <p>Source image (url)</p>
+        <input formControlName="srcImage" type="text">
+      </li>
     </ul>
   </div>
 </form>

@@ -20,6 +20,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {InfoModalComponent} from './components/modals/info-modal/info-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {SelectComponent} from './components/elements/select/select.component';
+import { ImageComponent } from './components/elements/image/image.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {SelectComponent} from './components/elements/select/select.component';
     InputComponent,
     TextareaComponent,
     InfoModalComponent,
-    SelectComponent
+    SelectComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ export interface IDataProperties {
   backgroundColor?: string
   border?: string
   borderRadius?: string
+  altImage?: string
+  srcImage?: string
   placeholder?: string
   displayResize?: boolean
   nameOption?: string
