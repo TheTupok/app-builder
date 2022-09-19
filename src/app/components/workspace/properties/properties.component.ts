@@ -21,7 +21,8 @@ export class PropertiesComponent implements OnInit {
     'app-input': ['placeholder', 'fontFamily', 'textModification'],
     'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius', 'fontFamily', 'textModification'],
     'app-container': ['backgroundColor', 'displayResize'],
-    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification']
+    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification'],
+    'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
   }
 
   private clearForm: boolean = false
@@ -54,7 +55,10 @@ export class PropertiesComponent implements OnInit {
       border: '',
       borderRadius: '',
       placeholder: '',
-      displayResize: ''
+      displayResize: '',
+      nameOption: '',
+      selectOption: [],
+      selectOptionDelete: ''
     })
 
     this.editComponentForm.valueChanges.subscribe(data => {
@@ -67,6 +71,21 @@ export class PropertiesComponent implements OnInit {
         }
       }
     })
+  }
+
+  addOptionSelect() {
+    if (this.propertiesData.nameOption) {
+      this.propertiesData.selectOption.push(this.propertiesData.nameOption)
+    }
+    this.editComponentForm.controls['nameOption'].reset()
+  }
+
+  deleteOptionSelect() {
+    this.propertiesData.selectOption = this.propertiesData.selectOption.filter((item: string) => {
+      return item != this.propertiesData.selectOptionDelete
+    })
+    this.propertiesData.selectOptionDelete = this.propertiesData.selectOption[0];
+    this.propertiesService.setData(this.propertiesData)
   }
 
   getStyle(style: string) {

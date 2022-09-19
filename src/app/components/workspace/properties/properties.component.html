@@ -27,11 +27,11 @@
       </li>
       <li *ngIf="getStyle('color')">
         <p>Color Text</p>
-        <input formControlName="color" type="color">
+        <input formControlName="color" type="color" value="#000000">
       </li>
       <li *ngIf="getStyle('backgroundColor')">
         <p>Background Color</p>
-        <input formControlName="backgroundColor" type="color">
+        <input formControlName="backgroundColor" type="color" value="#efb0f2">
       </li>
       <li *ngIf="getStyle('border')">
         <p>Border</p>
@@ -48,6 +48,18 @@
       <li *ngIf="getStyle('placeholder')">
         <p>Placeholder</p>
         <input formControlName="placeholder" type="text">
+      </li>
+      <li *ngIf="getStyle('optionModification')">
+        <p>Add option select</p>
+        <input formControlName="nameOption" type="text" class="input-option">
+        <button (click)="addOptionSelect()" class="input-btn">+</button>
+        <p>Delete option select</p>
+        <select formControlName="selectOptionDelete" class="delete-option">
+          <option value="{{option}}" *ngFor="let option of this.propertiesData['selectOption']">
+            {{option}}
+          </option>
+        </select>
+        <button (click)="deleteOptionSelect()" class="input-btn">+</button>
       </li>
     </ul>
   </div>

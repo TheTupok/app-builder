@@ -17,7 +17,7 @@ export class LabelComponent implements OnInit {
     fontWeight: '',
     fontStyle: '',
     textDecoration: '',
-    color: '#000'
+    color: '#000000'
   };
 
   constructor(private propetyService: PropertiesService) {

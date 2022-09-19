@@ -6,6 +6,7 @@ import {ResizeComponentService} from "../../../services/resize-component.service
 import {ButtonComponent} from "../../elements/button/button.component";
 import {InputComponent} from "../../elements/input/input.component";
 import {TextareaComponent} from "../../elements/textarea/textarea.component";
+import {SelectComponent} from "../../elements/select/select.component";
 
 
 @Component({
@@ -74,6 +75,11 @@ export class WorkingFieldComponent implements OnInit {
     }
     if (target.getAttribute('data-type') == 'app-textarea') {
       const component = this.viewContainerRef.createComponent(TextareaComponent)
+      this.addMainPropertiesComponent(component.location.nativeElement)
+      return component.location.nativeElement
+    }
+    if (target.getAttribute('data-type') == 'app-select') {
+      const component = this.viewContainerRef.createComponent(SelectComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
       return component.location.nativeElement
     }

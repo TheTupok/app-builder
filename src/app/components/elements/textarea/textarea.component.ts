@@ -17,7 +17,7 @@ export class TextareaComponent implements OnInit {
     fontStyle: '',
     textDecoration: '',
     backgroundColor: '#EBF0F2',
-    color: '#000',
+    color: '#000000',
   };
 
   constructor(private propetyService: PropertiesService) {

@@ -18,7 +18,7 @@ export class ButtonComponent implements OnInit {
     fontStyle: '',
     textDecoration: '',
     backgroundColor: '#6EE768',
-    color: '#000',
+    color: '#000000',
     border: '1px solid black',
     borderRadius: '20%',
   };
