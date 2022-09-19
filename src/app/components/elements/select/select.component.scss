@@ -1,0 +1,14 @@
+
+select:after {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.option select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}

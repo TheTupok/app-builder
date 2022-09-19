@@ -1,0 +1,5 @@
+<div (contextmenu)="setData()">
+  <select [style]="getStyle()">
+    <option *ngFor="let option of this.propertiesData.selectOption">{{option}}</option>
+  </select>
+</div>
