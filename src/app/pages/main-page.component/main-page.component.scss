@@ -1,8 +1,10 @@
 app-element-area {
+  position: fixed;
   display: inline-block;
   width: 15%;
   float: left;
   background-color: #D0D8D9;
+  z-index: 20;
 }
 
 app-working-field {
