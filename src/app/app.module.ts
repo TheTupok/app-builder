@@ -21,6 +21,7 @@ import {InfoModalComponent} from './components/modals/info-modal/info-modal.comp
 import {MatDialogModule} from "@angular/material/dialog";
 import {SelectComponent} from './components/elements/select/select.component';
 import { ImageComponent } from './components/elements/image/image.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ImageComponent } from './components/elements/image/image.component';
     MatBadgeModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
   providers: [FormBuilder, WorkingFieldComponent],
   bootstrap: [AppComponent]
