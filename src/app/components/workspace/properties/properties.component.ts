@@ -10,6 +10,7 @@ import {PropertiesService} from "../../../services/property.service";
 
 export class PropertiesComponent implements OnInit {
   editComponentForm: FormGroup;
+  filePath: string;
 
   constructor(public fb: FormBuilder,
               public propertiesService: PropertiesService) {
@@ -89,6 +90,19 @@ export class PropertiesComponent implements OnInit {
     })
     this.propertiesData.selectOptionDelete = this.propertiesData.selectOption[0];
     this.propertiesService.setData(this.propertiesData)
+  }
+
+  imagePreview(event: any) {
+    const file = (event.target as HTMLInputElement).files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.propertiesData.srcImage = reader.result as string
+    }
+    reader.readAsDataURL(file)
+  }
+
+  submit() {
+    console.log(this.propertiesData.srcImage)
   }
 
   getStyle(style: string) {

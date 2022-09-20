@@ -64,8 +64,8 @@
       <li *ngIf="getStyle('AltSrcImage')">
         <p>Alt image</p>
         <input formControlName="altImage" type="text">
-        <p>Source image (url)</p>
-        <input formControlName="srcImage" type="text">
+        <label class="custom-file-update">
+          <input type="file" accept="image/*" (change)="imagePreview($event)" class="input-file">Update image</label>
       </li>
     </ul>
   </div>
