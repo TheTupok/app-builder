@@ -30,7 +30,7 @@ export class WorkingFieldComponent implements OnInit {
   public countTarget = 0
 
   public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
-    if (event.button == 0 && !event.altKey) {
+    if (event.button == 0 && event.altKey) {
       this.countTarget++
       if (this.countTarget == 1) {
         setTimeout(() => {
