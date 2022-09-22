@@ -87,6 +87,7 @@ export class WorkingFieldComponent implements OnInit {
     if (target.getAttribute('data-type') == 'app-image') {
       const component = this.viewContainerRef.createComponent(ImageComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
+      this.renderer.setStyle(component.location.nativeElement, 'width', '100px')
       return component.location.nativeElement
     }
   }
