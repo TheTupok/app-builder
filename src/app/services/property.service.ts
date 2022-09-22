@@ -39,6 +39,17 @@ export class PropertiesService {
     return data
   }
 
+  returnBackgroundColor(data: IDataProperties ,conditions: number){
+    if (conditions == 1) {
+      data.backgroundColor = data.backgroundColorHover
+    } else if (conditions == 2) {
+      data.backgroundColor = data.backgroundColorFocus
+    } else {
+      data.backgroundColor = data.backgroundColorNormal
+    }
+    return data
+  }
+
   openPanel() {
     const panel = document.getElementById('propertiesPanel')
     panel.style.width = '200px'

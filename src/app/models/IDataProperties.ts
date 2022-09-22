@@ -8,6 +8,9 @@ export interface IDataProperties {
   fontFamily?: string
   color?: string
   backgroundColor?: string
+  backgroundColorNormal?: string
+  backgroundColorHover?: string
+  backgroundColorFocus?: string
   border?: string
   borderRadius?: string
   altImage?: string

@@ -1,3 +1,8 @@
-<div (mousedown)="setData()">
-  <button [style]="getStyle()">{{ this.propertiesData.textContent }}</button>
+<div
+  (mousedown)="setData()"
+  (mouseup)="this.conditions = 1"
+  (mouseover)="this.conditions = 1"
+  (mouseleave)="this.conditions = 0"
+>
+  <button [ngStyle]="getStyle()">{{ this.propertiesData.textContent }}</button>
 </div>

@@ -19,9 +19,12 @@ export class PropertiesComponent implements OnInit {
   public propertiesListComponent: any = {
     'app-label': ['textContent', 'fontSize', 'color', 'fontFamily', 'textModification'],
     'app-input': ['placeholder', 'fontFamily', 'textModification'],
-    'app-button': ['textContent', 'fontSize', 'backgroundColor', 'color', 'border', 'borderRadius', 'fontFamily', 'textModification'],
+    'app-button': [
+      'textContent', 'fontSize', 'backgroundColor', 'backgroundColorHover', 'backgroundColorFocus',
+      'color', 'border', 'borderRadius', 'fontFamily', 'textModification'
+    ],
     'app-container': ['backgroundColor', 'displayResize'],
-    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification'],
+    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification', 'displayResize'],
     'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
     'app-image': ['border', 'AltSrcImage', 'displayResize'],
   }
@@ -53,6 +56,9 @@ export class PropertiesComponent implements OnInit {
       textDecoration: '',
       color: '',
       backgroundColor: '',
+      backgroundColorNormal: '',
+      backgroundColorHover: '',
+      backgroundColorFocus: '',
       border: '',
       borderRadius: '',
       placeholder: '',

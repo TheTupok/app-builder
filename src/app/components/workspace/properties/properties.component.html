@@ -35,7 +35,15 @@
       </li>
       <li *ngIf="getStyle('backgroundColor')">
         <p>Background Color</p>
-        <input formControlName="backgroundColor" type="color" value="#efb0f2">
+        <input formControlName="backgroundColorNormal" type="color" value="#ffffff">
+      </li>
+      <li *ngIf="getStyle('backgroundColorHover')">
+        <p>Background Color Hover</p>
+        <input formControlName="backgroundColorHover" type="color" value="#ffffff">
+      </li>
+      <li *ngIf="getStyle('backgroundColorFocus')">
+        <p>Background Color Focus</p>
+        <input formControlName="backgroundColorFocus" type="color" value="#ffffff">
       </li>
       <li *ngIf="getStyle('border')">
         <p>Border</p>
