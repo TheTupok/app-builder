@@ -77,11 +77,13 @@ export class WorkingFieldComponent implements OnInit {
     if (target.getAttribute('data-type') == 'app-textarea') {
       const component = this.viewContainerRef.createComponent(TextareaComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
+      this.renderer.setStyle(component.location.nativeElement, 'height', '50px')
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-select') {
       const component = this.viewContainerRef.createComponent(SelectComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
+      this.renderer.setStyle(component.location.nativeElement, 'width', '100px')
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-image') {

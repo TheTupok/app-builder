@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { ResizeComponentService } from 'src/app/services/resize-component.service';
 import {IDataProperties} from "../../../models/IDataProperties";
 import {PropertiesService} from "../../../services/property.service";
 
@@ -19,18 +20,23 @@ export class SelectComponent implements OnInit {
     color: '#000000',
     nameOption: '',
     selectOption: [],
-    selectOptionDelete: ''
+    selectOptionDelete: '',
+    displayResize: true
   };
 
-  constructor(private propetyService: PropertiesService) {
+  constructor(private propetyService: PropertiesService,
+              private resizeService: ResizeComponentService) {
   }
 
   ngOnInit(): void {
     this.setData();
   }
 
+  resizeComponent(event: MouseEvent) {
+    this.resizeService.resizeComponent(event)
+  }
+
   public setData() {
-    console.log(this.propertiesData)
     this.propetyService.setData(this.propertiesData)
   }
 

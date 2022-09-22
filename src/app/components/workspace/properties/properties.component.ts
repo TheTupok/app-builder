@@ -25,7 +25,7 @@ export class PropertiesComponent implements OnInit {
     ],
     'app-container': ['backgroundColor', 'displayResize'],
     'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification', 'displayResize'],
-    'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
+    'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification', 'displayResize'],
     'app-image': ['border', 'AltSrcImage', 'displayResize'],
   }
 

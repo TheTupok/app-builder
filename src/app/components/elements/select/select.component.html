@@ -1,4 +1,8 @@
-<div (mousedown)="setData()">
+<div (mousedown)="setData()" class="mainWrapperSelect">
+  <div *ngIf="propertiesData['displayResize']" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="propertiesData['displayResize']" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="propertiesData['displayResize']" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="propertiesData['displayResize']" class="resizer se" (mousedown)="resizeComponent($event)"></div>
   <select [style]="getStyle()">
     <option *ngFor="let option of this.propertiesData.selectOption">{{option}}</option>
   </select>
