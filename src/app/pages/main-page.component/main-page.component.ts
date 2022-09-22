@@ -25,7 +25,6 @@ export class MainPageComponent implements OnInit {
       const target = event.target as HTMLElement;
       if (target.classList.contains('sample')) {
         const newTarget = this.workingFieldComponent.renderComponent(target)
-        console.log(newTarget)
         this.dragsService.DragAndDrop(event, newTarget)
       }
     }

@@ -1,6 +1,5 @@
-<div class="close-container" (click)="closePanel()">
-  <div class="leftright"></div>
-  <div class="rightleft"></div>
+<div class="btn-close" (click)="closePanel()">
+  <label class="arrow right"></label>
 </div>
 
 <form *ngIf="propertiesData" [formGroup]="editComponentForm">
@@ -64,7 +63,7 @@
             {{option}}
           </option>
         </select>
-        <button (click)="deleteOptionSelect()" class="input-btn">+</button>
+        <button (click)="deleteOptionSelect()" class="input-btn">-</button>
       </li>
       <li *ngIf="getStyle('AltSrcImage')">
         <p>Alt image</p>
