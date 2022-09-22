@@ -1,4 +1,4 @@
-<div (contextmenu)="setData()">
+<div (mousedown)="setData()">
   <input [style]="getStyle()"
          placeholder="{{ this.propertiesData.placeholder }}"
          value="{{ this.propertiesData.textContent }}"

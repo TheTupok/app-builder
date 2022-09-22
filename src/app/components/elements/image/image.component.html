@@ -1,4 +1,4 @@
-<div (contextmenu)="setData()">
+<div (mousedown)="setData()">
   <div *ngIf="propertiesData['displayResize']" class="resizer se" (mousedown)="resizeComponent($event)"></div>
   <img [style]="getStyle()" [src]="this.propertiesData.srcImage" [alt]="this.propertiesData.altImage">
 </div>

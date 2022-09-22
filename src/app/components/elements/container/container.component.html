@@ -1,4 +1,4 @@
-<div [style]="getStyle()" (contextmenu)="setData()" class="container">
+<div [style]="getStyle()" (mousedown)="setData()" class="container">
   <div *ngIf="propertiesData['displayResize']" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="propertiesData['displayResize']" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="propertiesData['displayResize']" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
