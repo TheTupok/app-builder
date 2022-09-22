@@ -24,6 +24,7 @@ export class TextareaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   public setData() {

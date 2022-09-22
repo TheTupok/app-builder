@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
+import {PropertiesService} from "./property.service";
 
 @Injectable({providedIn: "root"})
 
 export class DragsService {
-  constructor() {
+  constructor(private propertiesService: PropertiesService) {
   }
 
   private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent, shiftX: number, shiftY: number) {
@@ -84,6 +85,7 @@ export class DragsService {
           target.style.zIndex = ''
         }
       } else {
+        this.propertiesService.closePanel()
         target.remove()
       }
       document.removeEventListener('mousemove', onMouseMove);

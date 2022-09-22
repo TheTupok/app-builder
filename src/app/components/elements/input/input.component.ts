@@ -13,6 +13,7 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   public propertiesData: IDataProperties = {

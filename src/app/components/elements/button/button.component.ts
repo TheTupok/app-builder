@@ -27,6 +27,7 @@ export class ButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   public setData() {

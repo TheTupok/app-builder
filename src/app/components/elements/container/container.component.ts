@@ -21,6 +21,7 @@ export class ContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   public count = 0

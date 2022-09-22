@@ -24,6 +24,7 @@ export class ImageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   resizeComponent(event: MouseEvent) {

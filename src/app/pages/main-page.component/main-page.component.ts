@@ -12,7 +12,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public dragsService: DragsService,
-    public workingFieldComponent: WorkingFieldComponent,
+    public workingFieldComponent: WorkingFieldComponent
   ) {
   }
 
@@ -25,6 +25,7 @@ export class MainPageComponent implements OnInit {
       const target = event.target as HTMLElement;
       if (target.classList.contains('sample')) {
         const newTarget = this.workingFieldComponent.renderComponent(target)
+        console.log(newTarget)
         this.dragsService.DragAndDrop(event, newTarget)
       }
     }

@@ -24,6 +24,7 @@ export class LabelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setData();
   }
 
   public setData() {
