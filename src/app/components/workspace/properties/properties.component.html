@@ -1,6 +1,7 @@
-<button class="btn-close" (click)="closePanel()">
-  <i class="fa-solid fa-x"></i>
-</button>
+<div class="close-container" (click)="closePanel()">
+  <div class="leftright"></div>
+  <div class="rightleft"></div>
+</div>
 
 <form *ngIf="propertiesData" [formGroup]="editComponentForm">
   <div>
