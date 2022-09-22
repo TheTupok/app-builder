@@ -12,15 +12,21 @@ export class DragsService {
 
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
+    target.classList.remove('inWorkingArea')
     target.classList.add('inContainer')
 
     container.appendChild(target)
   }
 
   private pullElFromContainer(target: HTMLElement, event: MouseEvent) {
+    const workingField = document.getElementsByClassName('WorkingField')[0] as HTMLElement
+
     target.style.left = event.clientX - (event.clientX - target.getBoundingClientRect().left) + 'px';
     target.style.top = event.clientY - (event.clientY - target.getBoundingClientRect().top) + 'px';
     target.classList.remove('inContainer')
+    target.classList.add('inWorkingArea')
+
+    workingField.append(target)
   }
 
   public DragAndDrop(event: MouseEvent, target: HTMLElement) {
@@ -36,7 +42,6 @@ export class DragsService {
 
     target.style.position = 'absolute';
     target.style.zIndex = '1000';
-    document.body.append(target);
 
     let shiftX = event.clientX - target.getBoundingClientRect().left;
     let shiftY = event.clientY - target.getBoundingClientRect().top;
@@ -60,22 +65,23 @@ export class DragsService {
     document.addEventListener('mousemove', onMouseMove);
 
     target.onmouseup = (event: MouseEvent) => {
-      const workArea = document.querySelector('.WorkingField')
+      const workingField = document.getElementsByClassName('WorkingField')[0] as HTMLElement
       target.hidden = true
       const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
       target.hidden = false
 
-      if (elemBelow.closest('.WorkingField')) {
-        target.classList.add('inWorkingArea')
-        target.style.cursor = ''
-        target.style.zIndex = '10'
+      target.style.cursor = ''
+      target.style.zIndex = '10'
+
+      if (elemBelow.closest('.container')) {
+        this.addElToContainer(target, elemBelow, event, shiftX, shiftY)
+      } else if (elemBelow.closest('.WorkingField')) {
+        if (!isWorkArea) {
+          target.classList.add('inWorkingArea')
+          workingField.append(target)
+        }
         if (target.classList.contains('container-component')) {
           target.style.zIndex = ''
-        }
-        if (elemBelow.closest('.container')) {
-          this.addElToContainer(target, elemBelow, event, shiftX, shiftY)
-        } else {
-          workArea!.appendChild(target)
         }
       } else {
         target.remove()
