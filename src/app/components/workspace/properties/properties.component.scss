@@ -38,3 +38,15 @@ p {
   cursor: pointer;
 }
 
+.btn-close {
+  text-align: center;
+  margin: 0.5em;
+  border-radius: 50%;
+  padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.btn-close:hover {
+  background-color: #f44336;
+}
+

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
-import {PropertiesService} from "../../services/property.service";
 import {WorkingFieldComponent} from "../../components/workspace/working-field/working-field.component";
 
 
@@ -14,7 +13,6 @@ export class MainPageComponent implements OnInit {
   constructor(
     public dragsService: DragsService,
     public workingFieldComponent: WorkingFieldComponent,
-    private propertiesService: PropertiesService
   ) {
   }
 
@@ -30,9 +28,5 @@ export class MainPageComponent implements OnInit {
         this.dragsService.DragAndDrop(event, newTarget)
       }
     }
-  }
-
-  clearForm() {
-    this.propertiesService.closePanel();
   }
 }

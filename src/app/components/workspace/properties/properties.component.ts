@@ -10,7 +10,6 @@ import {PropertiesService} from "../../../services/property.service";
 
 export class PropertiesComponent implements OnInit {
   editComponentForm: FormGroup;
-  filePath: string;
 
   constructor(public fb: FormBuilder,
               public propertiesService: PropertiesService) {
@@ -101,8 +100,8 @@ export class PropertiesComponent implements OnInit {
     reader.readAsDataURL(file)
   }
 
-  submit() {
-    console.log(this.propertiesData.srcImage)
+  closePanel() {
+    this.propertiesService.closePanel()
   }
 
   getStyle(style: string) {
