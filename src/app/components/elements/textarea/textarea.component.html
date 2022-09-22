@@ -1,3 +1,4 @@
-<div (mousedown)="setData()">
+<div (mousedown)="setData()" class="mainWrapperTextarea">
+  <div *ngIf="propertiesData['displayResize']" class="resizer se" (mousedown)="resizeComponent($event)"></div>
   <textarea [style]="getStyle()">{{ propertiesData.textContent }}</textarea>
 </div>

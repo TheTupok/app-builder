@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IDataProperties} from "../../../models/IDataProperties";
 import {PropertiesService} from "../../../services/property.service";
+import {ResizeComponentService} from "../../../services/resize-component.service";
 
 @Component({
   selector: 'app-textarea',
@@ -18,13 +19,19 @@ export class TextareaComponent implements OnInit {
     textDecoration: '',
     backgroundColor: '#EBF0F2',
     color: '#000000',
+    displayResize: true
   };
 
-  constructor(private propetyService: PropertiesService) {
+  constructor(private propetyService: PropertiesService,
+              private resizeService: ResizeComponentService) {
   }
 
   ngOnInit(): void {
     this.setData();
+  }
+
+  resizeComponent(event: MouseEvent) {
+    this.resizeService.resizeComponent(event)
   }
 
   public setData() {
