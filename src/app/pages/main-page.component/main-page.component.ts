@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DragsService} from "../../services/drags-component.service";
 import {WorkingFieldComponent} from "../../components/workspace/working-field/working-field.component";
+import {PropertiesService} from "../../services/property.service";
 
 
 @Component({
@@ -12,7 +13,8 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     public dragsService: DragsService,
-    public workingFieldComponent: WorkingFieldComponent
+    public workingFieldComponent: WorkingFieldComponent,
+    private propertiesService: PropertiesService
   ) {
   }
 
@@ -28,5 +30,9 @@ export class MainPageComponent implements OnInit {
         this.dragsService.DragAndDrop(event, newTarget)
       }
     }
+  }
+
+  mouseDown() {
+    this.propertiesService.closePanel()
   }
 }

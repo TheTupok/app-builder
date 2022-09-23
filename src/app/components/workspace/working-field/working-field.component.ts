@@ -20,7 +20,7 @@ export class WorkingFieldComponent implements OnInit {
   constructor(private viewContainerRef: ViewContainerRef,
               public dragsService: DragsService,
               public resizeComponentService: ResizeComponentService,
-              private renderer: Renderer2,
+              private renderer: Renderer2
   ) {
   }
 
@@ -49,6 +49,11 @@ export class WorkingFieldComponent implements OnInit {
       target,
       'mousedown',
       event => this.mouseClickEventComponent(event, target)
+    )
+    this.renderer.listen(
+      target,
+      'click',
+      event => event.stopPropagation()
     )
   }
 
