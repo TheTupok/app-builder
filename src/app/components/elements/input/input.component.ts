@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
 import {IDataProperties} from "../../../models/IDataProperties";
-import { ResizeComponentService } from 'src/app/services/resize-component.service';
+import {ResizeComponentService} from 'src/app/services/resize-component.service';
 
 @Component({
   selector: 'app-input',
@@ -9,6 +9,8 @@ import { ResizeComponentService } from 'src/app/services/resize-component.servic
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
+
+  public displayResize = false
 
   constructor(private propetyService: PropertiesService,
               private resizeService: ResizeComponentService) {
@@ -24,15 +26,19 @@ export class InputComponent implements OnInit {
     fontFamily: 'Arial, sans-serif',
     fontWeight: '',
     fontStyle: '',
-    textDecoration: '',
-    displayResize: true
+    textDecoration: ''
   };
 
   resizeComponent(event: MouseEvent) {
     this.resizeService.resizeComponent(event)
   }
 
+  clickOutside() {
+    this.displayResize = false
+  }
+
   public setData() {
+    this.displayResize = true
     this.propetyService.setData(this.propertiesData)
   }
 

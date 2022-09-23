@@ -10,10 +10,11 @@ import {IDataProperties} from "../../../models/IDataProperties";
 })
 export class ContainerComponent implements OnInit {
 
+  public displayResize = false
+
   public propertiesData: IDataProperties = {
     component: 'app-container',
-    backgroundColor: '#EBF0F2',
-    displayResize: true
+    backgroundColor: '#EBF0F2'
   };
 
   constructor(private propetyService: PropertiesService,
@@ -24,9 +25,12 @@ export class ContainerComponent implements OnInit {
     this.setData();
   }
 
-  public count = 0
+  clickOutside() {
+    this.displayResize = false
+  }
 
   public setData() {
+    this.displayResize = true
     this.propetyService.setData(this.propertiesData)
   }
 

@@ -10,6 +10,8 @@ import {ResizeComponentService} from "../../../services/resize-component.service
 })
 export class TextareaComponent implements OnInit {
 
+  public displayResize = false
+
   public propertiesData: IDataProperties = {
     component: 'app-textarea',
     fontSize: '18px',
@@ -18,8 +20,7 @@ export class TextareaComponent implements OnInit {
     fontStyle: '',
     textDecoration: '',
     backgroundColor: '#EBF0F2',
-    color: '#000000',
-    displayResize: true
+    color: '#000000'
   };
 
   constructor(private propetyService: PropertiesService,
@@ -34,7 +35,12 @@ export class TextareaComponent implements OnInit {
     this.resizeService.resizeComponent(event)
   }
 
+  clickOutside() {
+    this.displayResize = false
+  }
+
   public setData() {
+    this.displayResize = true
     this.propetyService.setData(this.propertiesData)
   }
 

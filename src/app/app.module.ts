@@ -22,6 +22,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {SelectComponent} from './components/elements/select/select.component';
 import { ImageComponent } from './components/elements/image/image.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NgClickOutsideDirective} from "ng-click-outside2";
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     MatButtonModule,
     MatDialogModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgClickOutsideDirective
   ],
   providers: [FormBuilder, WorkingFieldComponent],
   bootstrap: [AppComponent]

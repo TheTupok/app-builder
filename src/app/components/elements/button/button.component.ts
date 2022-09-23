@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertiesService} from "../../../services/property.service";
 import {IDataProperties} from "../../../models/IDataProperties";
+import {ResizeComponentService} from "../../../services/resize-component.service";
 
 @Component({
   selector: 'app-button',
@@ -9,6 +10,7 @@ import {IDataProperties} from "../../../models/IDataProperties";
 })
 export class ButtonComponent implements OnInit {
 
+  public displayResize = false
   public conditions: number = 0
 
   public propertiesData: IDataProperties = {
@@ -28,14 +30,24 @@ export class ButtonComponent implements OnInit {
     borderRadius: '20%',
   };
 
-  constructor(private propetyService: PropertiesService) {
+  constructor(private propetyService: PropertiesService,
+              private resizeService: ResizeComponentService) {
   }
 
   ngOnInit(): void {
     this.setData();
   }
 
+  resizeComponent(event: MouseEvent) {
+    this.resizeService.resizeComponent(event)
+  }
+
+  clickOutside() {
+    this.displayResize = false
+  }
+
   public setData() {
+    this.displayResize = true
     this.conditions = 2
     this.propetyService.setData(this.propertiesData)
   }

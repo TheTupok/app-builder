@@ -10,12 +10,13 @@ import {ResizeComponentService} from "../../../services/resize-component.service
 })
 export class ImageComponent implements OnInit {
 
+  public displayResize = false
+
   public propertiesData: IDataProperties = {
     component: 'app-image',
     border: '1px solid black',
     altImage: 'Add Image',
-    srcImage: '',
-    displayResize: true
+    srcImage: ''
   };
 
   constructor(private propetyService: PropertiesService,
@@ -31,7 +32,12 @@ export class ImageComponent implements OnInit {
     this.resizeService.resizeComponent(event)
   }
 
+  clickOutside() {
+    this.displayResize = false
+  }
+
   public setData() {
+    this.displayResize = true
     this.propetyService.setData(this.propertiesData)
   }
 

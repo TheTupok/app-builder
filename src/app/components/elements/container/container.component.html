@@ -1,6 +1,11 @@
-<div [style]="getStyle()" (mousedown)="setData()" class="container">
-  <div *ngIf="propertiesData['displayResize']" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
-  <div *ngIf="propertiesData['displayResize']" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
-  <div *ngIf="propertiesData['displayResize']" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
-  <div *ngIf="propertiesData['displayResize']" class="resizer se" (mousedown)="resizeComponent($event)"></div>
+<div
+  [style]="getStyle()"
+  (mousedown)="setData()"
+  [clickOutsideEvents]="'mouseup'"
+  (clickOutside)="clickOutside()"
+  class="container">
+  <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer se" (mousedown)="resizeComponent($event)"></div>
 </div>

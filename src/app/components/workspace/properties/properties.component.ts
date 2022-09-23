@@ -23,10 +23,10 @@ export class PropertiesComponent implements OnInit {
       'textContent', 'fontSize', 'backgroundColor', 'backgroundColorHover', 'backgroundColorFocus',
       'color', 'border', 'borderRadius', 'fontFamily', 'textModification'
     ],
-    'app-container': ['backgroundColor', 'displayResize'],
-    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification', 'displayResize'],
-    'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification', 'displayResize'],
-    'app-image': ['border', 'AltSrcImage', 'displayResize'],
+    'app-container': ['backgroundColor'],
+    'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification'],
+    'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
+    'app-image': ['border', 'AltSrcImage'],
   }
 
   private clearForm: boolean = false
@@ -64,7 +64,6 @@ export class PropertiesComponent implements OnInit {
       placeholder: '',
       altImage: '',
       srcImage: '',
-      displayResize: '',
       nameOption: '',
       selectOption: [],
       selectOptionDelete: ''

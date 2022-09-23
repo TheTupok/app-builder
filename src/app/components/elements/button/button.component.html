@@ -3,6 +3,13 @@
   (mouseup)="this.conditions = 1"
   (mouseover)="this.conditions = 1"
   (mouseleave)="this.conditions = 0"
+  [clickOutsideEvents]="'mouseup'"
+  (clickOutside)="clickOutside()"
+  class="mainWrapperBtn"
 >
+  <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
+  <div *ngIf="this.displayResize" class="resizer se" (mousedown)="resizeComponent($event)"></div>
   <button [ngStyle]="getStyle()">{{ this.propertiesData.textContent }}</button>
 </div>

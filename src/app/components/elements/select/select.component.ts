@@ -10,6 +10,8 @@ import {PropertiesService} from "../../../services/property.service";
 })
 export class SelectComponent implements OnInit {
 
+  public displayResize = false
+
   public propertiesData: IDataProperties = {
     component: 'app-select',
     fontSize: '18px',
@@ -20,8 +22,7 @@ export class SelectComponent implements OnInit {
     color: '#000000',
     nameOption: '',
     selectOption: [],
-    selectOptionDelete: '',
-    displayResize: true
+    selectOptionDelete: ''
   };
 
   constructor(private propetyService: PropertiesService,
@@ -36,7 +37,12 @@ export class SelectComponent implements OnInit {
     this.resizeService.resizeComponent(event)
   }
 
+  clickOutside() {
+    this.displayResize = false
+  }
+
   public setData() {
+    this.displayResize = true
     this.propetyService.setData(this.propertiesData)
   }
 
