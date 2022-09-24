@@ -5,6 +5,8 @@
   (mouseleave)="this.conditions = 0"
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
+  [exclude]="'.mainWrapperProperties'"
+  [excludeBeforeClick] = 'true'
   class="mainWrapperBtn"
 >
   <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>

@@ -53,10 +53,12 @@ export class PropertiesService {
   openPanel() {
     const panel = document.getElementById('propertiesPanel')
     panel.style.width = '200px'
+    panel.style.borderLeft = '1px solid #2C3740'
   }
 
   closePanel() {
     const panel = document.getElementById('propertiesPanel')
     panel.style.width = '0'
+    panel.style.borderLeft = '0'
   }
 }

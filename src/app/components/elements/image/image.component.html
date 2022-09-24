@@ -3,7 +3,10 @@
   [style]="getStyle()"
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
-  class="mainWrapperImage">
+  [exclude]="'.mainWrapperProperties'"
+  [excludeBeforeClick] = 'true'
+  class="mainWrapperImage"
+>
   <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer sw" (mousedown)="resizeComponent($event)"></div>

@@ -19,7 +19,7 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.propertiesService.closePanel()
   }
 
   public mouseClickEventComponent(event: MouseEvent) {
