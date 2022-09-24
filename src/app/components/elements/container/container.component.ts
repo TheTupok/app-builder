@@ -17,7 +17,7 @@ export class ContainerComponent implements OnInit {
     backgroundColor: '#EBF0F2'
   };
 
-  constructor(private propetyService: PropertiesService,
+  constructor(public propertyService: PropertiesService,
               public resizeService: ResizeComponentService) {
   }
 
@@ -31,7 +31,7 @@ export class ContainerComponent implements OnInit {
 
   public setData() {
     this.displayResize = true
-    this.propetyService.setData(this.propertiesData)
+    this.propertyService.setData(this.propertiesData)
   }
 
   public getStyle() {

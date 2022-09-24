@@ -9,6 +9,7 @@ export class PropertiesService {
   constructor() {
   }
 
+  public excludeClickOutside: string = ".mainWrapperProperties, .footer, .cdk-overlay-container"
   private _data: Subject<IDataProperties> = new Subject()
 
   getData(): Observable<IDataProperties> {

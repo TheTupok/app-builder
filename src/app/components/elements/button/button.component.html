@@ -5,7 +5,7 @@
   (mouseleave)="this.conditions = 0"
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
-  [exclude]="'.mainWrapperProperties'"
+  [exclude]="this.propertyService.excludeClickOutside"
   [excludeBeforeClick] = 'true'
   class="mainWrapperBtn"
 >

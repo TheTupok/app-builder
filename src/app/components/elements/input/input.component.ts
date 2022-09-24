@@ -12,7 +12,7 @@ export class InputComponent implements OnInit {
 
   public displayResize = false
 
-  constructor(private propetyService: PropertiesService,
+  constructor(public propertyService: PropertiesService,
               private resizeService: ResizeComponentService) {
   }
 
@@ -39,11 +39,11 @@ export class InputComponent implements OnInit {
 
   public setData() {
     this.displayResize = true
-    this.propetyService.setData(this.propertiesData)
+    this.propertyService.setData(this.propertiesData)
   }
 
   public getStyle() {
-    this.propertiesData = this.propetyService.returnModifiedText(this.propertiesData)
+    this.propertiesData = this.propertyService.returnModifiedText(this.propertiesData)
     return {...this.propertiesData}
   }
 }

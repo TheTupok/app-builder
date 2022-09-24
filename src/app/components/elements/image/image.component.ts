@@ -19,7 +19,7 @@ export class ImageComponent implements OnInit {
     srcImage: ''
   };
 
-  constructor(private propetyService: PropertiesService,
+  constructor(public propertyService: PropertiesService,
               public resizeService: ResizeComponentService
   ) {
   }
@@ -38,7 +38,7 @@ export class ImageComponent implements OnInit {
 
   public setData() {
     this.displayResize = true
-    this.propetyService.setData(this.propertiesData)
+    this.propertyService.setData(this.propertiesData)
   }
 
   public getStyle() {

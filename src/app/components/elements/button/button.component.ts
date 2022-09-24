@@ -30,7 +30,7 @@ export class ButtonComponent implements OnInit {
     borderRadius: '20%',
   };
 
-  constructor(private propetyService: PropertiesService,
+  constructor(public propertyService: PropertiesService,
               private resizeService: ResizeComponentService) {
   }
 
@@ -43,18 +43,19 @@ export class ButtonComponent implements OnInit {
   }
 
   clickOutside() {
+    console.log('ok')
     this.displayResize = false
   }
 
   public setData() {
     this.displayResize = true
     this.conditions = 2
-    this.propetyService.setData(this.propertiesData)
+    this.propertyService.setData(this.propertiesData)
   }
 
   public getStyle() {
-    this.propertiesData = this.propetyService.returnBackgroundColor(this.propertiesData, this.conditions)
-    this.propertiesData = this.propetyService.returnModifiedText(this.propertiesData)
+    this.propertiesData = this.propertyService.returnBackgroundColor(this.propertiesData, this.conditions)
+    this.propertiesData = this.propertyService.returnModifiedText(this.propertiesData)
     return {...this.propertiesData}
   }
 }
