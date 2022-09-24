@@ -7,25 +7,31 @@ export class DragsService {
   constructor(private propertiesService: PropertiesService) {
   }
 
-  private addElToContainer(target: HTMLElement, container: Element, event: MouseEvent, shiftX: number, shiftY: number) {
-    const containerX = container.getBoundingClientRect().left;
-    const containerY = container.getBoundingClientRect().top;
+  private addElToField(target: HTMLElement, field: HTMLElement, event: MouseEvent, shiftX: number, shiftY: number) {
+    const containerX = field.getBoundingClientRect().left;
+    const containerY = field.getBoundingClientRect().top;
 
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
-    target.classList.remove('inWorkingArea')
-    target.classList.add('inContainer')
 
-    container.appendChild(target)
+    if (field.classList.contains('container-component')) {
+      target.classList.remove('inWorkingArea')
+      target.classList.add('inContainer')
+    }
+
+    field.appendChild(target)
   }
 
-  private pullElFromContainer(target: HTMLElement, event: MouseEvent) {
+  private pullElFromField(target: HTMLElement, event: MouseEvent) {
     const workingField = document.getElementsByClassName('WorkingField')[0] as HTMLElement
 
     target.style.left = event.clientX - (event.clientX - target.getBoundingClientRect().left) + 'px';
     target.style.top = event.clientY - (event.clientY - target.getBoundingClientRect().top) + 'px';
-    target.classList.remove('inContainer')
-    target.classList.add('inWorkingArea')
+
+    if (target.classList.contains('inContainer')) {
+      target.classList.remove('inContainer')
+      target.classList.add('inWorkingArea')
+    }
 
     workingField.append(target)
   }
@@ -34,10 +40,11 @@ export class DragsService {
     let isWorkArea = false;
 
     if (target.classList.contains('inContainer')) {
-      this.pullElFromContainer(target, event)
+      this.pullElFromField(target, event)
     }
 
     if (target.classList.contains('inWorkingArea')) {
+      this.pullElFromField(target, event)
       isWorkArea = true
     }
 
@@ -66,20 +73,19 @@ export class DragsService {
     document.addEventListener('mousemove', onMouseMove);
 
     target.onmouseup = (event: MouseEvent) => {
-      const workingField = document.getElementsByClassName('WorkingField')[0] as HTMLElement
       target.hidden = true
-      const elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+      const elemBelow = document.elementFromPoint(event.clientX, event.clientY) as HTMLElement;
       target.hidden = false
 
       target.style.cursor = ''
       target.style.zIndex = '10'
 
-      if (elemBelow.closest('.container')) {
-        this.addElToContainer(target, elemBelow, event, shiftX, shiftY)
-      } else if (elemBelow.closest('.WorkingField')) {
+      if (elemBelow.closest('.container-component')) {
+        this.addElToField(target, elemBelow, event, shiftX, shiftY)
+      } else if (elemBelow.closest('.pageField, .inWorkingArea')) {
         if (!isWorkArea) {
           target.classList.add('inWorkingArea')
-          workingField.append(target)
+          this.addElToField(target, elemBelow, event, shiftX, shiftY)
         }
         if (target.classList.contains('container-component')) {
           target.style.zIndex = ''
