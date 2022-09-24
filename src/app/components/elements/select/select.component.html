@@ -3,7 +3,7 @@
   class="mainWrapperSelect"
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
-  [exclude]="'.mainWrapperProperties'"
+  [exclude]="this.propertyService.excludeClickOutside"
   [excludeBeforeClick] = 'true'
 >
   <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
