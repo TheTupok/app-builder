@@ -43,7 +43,6 @@ export class ButtonComponent implements OnInit {
   }
 
   clickOutside() {
-    console.log('ok')
     this.displayResize = false
   }
 

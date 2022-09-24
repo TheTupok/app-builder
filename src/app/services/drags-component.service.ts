@@ -14,7 +14,7 @@ export class DragsService {
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
 
-    if (field.classList.contains('container-component')) {
+    if (field.classList.contains('container')) {
       target.classList.remove('inWorkingArea')
       target.classList.add('inContainer')
     }
@@ -23,7 +23,7 @@ export class DragsService {
   }
 
   private pullElFromField(target: HTMLElement, event: MouseEvent) {
-    const workingField = document.getElementsByClassName('WorkingField')[0] as HTMLElement
+    const workingField = document.getElementById('WorkingField') as HTMLElement
 
     target.style.left = event.clientX - (event.clientX - target.getBoundingClientRect().left) + 'px';
     target.style.top = event.clientY - (event.clientY - target.getBoundingClientRect().top) + 'px';
