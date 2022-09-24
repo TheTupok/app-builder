@@ -52,7 +52,7 @@ export class PropertiesService {
 
   openPanel() {
     const panel = document.getElementById('propertiesPanel')
-    panel.style.width = '200px'
+    panel.style.width = '15%'
     panel.style.borderLeft = '1px solid #2C3740'
   }
 
