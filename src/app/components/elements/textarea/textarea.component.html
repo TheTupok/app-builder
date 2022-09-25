@@ -7,5 +7,5 @@
   [excludeBeforeClick] = 'true'
 >
   <div *ngIf="this.displayResize" class="resizer se" (mousedown)="resizeComponent($event)"></div>
-  <textarea [style]="getStyle()">{{ propertiesData.textContent }}</textarea>
+  <textarea [style]="getStyle()" class="focus">{{ propertiesData.textContent }}</textarea>
 </div>

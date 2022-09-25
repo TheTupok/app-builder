@@ -10,7 +10,7 @@
   <div *ngIf="this.displayResize" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer se" (mousedown)="resizeComponent($event)"></div>
-  <select [style]="getStyle()">
+  <select [style]="getStyle()" onmouseout="this.size = 1" onmouseover="this.size=this.length;">
     <option *ngFor="let option of this.propertiesData.selectOption">{{option}}</option>
   </select>
 </div>

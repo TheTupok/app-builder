@@ -14,6 +14,11 @@ export class DragsService {
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
 
+    if (field.classList.contains('pageField')) {
+      target.style.left = event.clientX - containerX - shiftX - 1 + 'px'
+      target.style.top = event.clientY - containerY - shiftY - 1 + 'px'
+    }
+
     if (field.classList.contains('container')) {
       target.classList.remove('inWorkingArea')
       target.classList.add('inContainer')
@@ -74,27 +79,34 @@ export class DragsService {
 
     target.onmouseup = (event: MouseEvent) => {
       target.hidden = true
-      const elemBelow = document.elementFromPoint(event.clientX, event.clientY) as HTMLElement;
+      let elemBelow = document.elementFromPoint(event.clientX, event.clientY) as HTMLElement;
       target.hidden = false
 
       target.style.cursor = ''
       target.style.zIndex = '10'
 
+      if (!isWorkArea) {
+        target.classList.add('inWorkingArea')
+      }
+
       if (elemBelow.closest('.container-component')) {
+        elemBelow = elemBelow.closest('.container-component')
         this.addElToField(target, elemBelow, event, shiftX, shiftY)
-      } else if (elemBelow.closest('.pageField, .inWorkingArea')) {
-        if (!isWorkArea) {
-          target.classList.add('inWorkingArea')
-          this.addElToField(target, elemBelow, event, shiftX, shiftY)
-        }
+      } else if (elemBelow.closest('.pageField')) {
+        elemBelow = elemBelow.closest('.pageField')
         if (target.classList.contains('container-component')) {
           target.style.zIndex = ''
         }
+        this.addElToField(target, elemBelow, event, shiftX, shiftY)
       } else {
         this.propertiesService.closePanel()
         target.remove()
       }
       document.removeEventListener('mousemove', onMouseMove);
+
+      const focusTarget = target.getElementsByClassName('focus')[0] as HTMLElement
+      focusTarget?.focus()
+
       target.onmouseup = null;
     }
 
