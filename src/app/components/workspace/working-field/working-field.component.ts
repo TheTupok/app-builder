@@ -8,6 +8,7 @@ import {InputComponent} from "../../elements/input/input.component";
 import {TextareaComponent} from "../../elements/textarea/textarea.component";
 import {SelectComponent} from "../../elements/select/select.component";
 import {ImageComponent} from "../../elements/image/image.component";
+import {A4PageComponent} from "../../page/a4-page/a4-page.component";
 
 
 @Component({
@@ -55,6 +56,13 @@ export class WorkingFieldComponent implements OnInit {
       'click',
       event => event.stopPropagation()
     )
+  }
+
+  createNewPage() {
+    const newPage = this.viewContainerRef.createComponent(A4PageComponent)
+    const workingField = document.querySelector('app-working-field') as HTMLElement
+
+    workingField.append(newPage.location.nativeElement)
   }
 
   public renderComponent(target: HTMLElement) {

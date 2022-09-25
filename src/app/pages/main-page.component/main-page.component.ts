@@ -35,6 +35,10 @@ export class MainPageComponent implements OnInit {
     }
   }
 
+  createNewPage() {
+    this.workingFieldComponent.createNewPage()
+  }
+
   openDialogInfo() {
     this.dialog.open(InfoModalComponent);
   }

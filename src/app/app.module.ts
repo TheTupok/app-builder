@@ -23,6 +23,7 @@ import {SelectComponent} from './components/elements/select/select.component';
 import { ImageComponent } from './components/elements/image/image.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgClickOutsideDirective} from "ng-click-outside2";
+import { A4PageComponent } from './components/page/a4-page/a4-page.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {NgClickOutsideDirective} from "ng-click-outside2";
     TextareaComponent,
     InfoModalComponent,
     SelectComponent,
-    ImageComponent
+    ImageComponent,
+    A4PageComponent
   ],
   imports: [
     BrowserModule,

@@ -5,5 +5,13 @@
 ></app-working-field>
 <app-properties id="propertiesPanel"></app-properties>
 <div class="footer">
-    <button class="info-btn" (click)="openDialogInfo()"><i class="fa-solid fa-info fa-la"></i></button>
+  <div class="info-btn">
+    <button title="info" (click)="openDialogInfo()">
+      <i class="fa-solid fa-info fa-la"></i>
+    </button>
+  </div>
+  <div class="page-setting">
+    <button title="new page" (click)="createNewPage()">
+      <i class="fa-solid fa-plus fa-la"></i></button>
+  </div>
 </div>

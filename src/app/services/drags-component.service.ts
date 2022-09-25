@@ -23,10 +23,10 @@ export class DragsService {
   }
 
   private pullElFromField(target: HTMLElement, event: MouseEvent) {
-    const workingField = document.getElementById('WorkingField') as HTMLElement
+    const workingField = document.querySelector('app-working-field') as HTMLElement
 
-    target.style.left = event.clientX - (event.clientX - target.getBoundingClientRect().left) + 'px';
-    target.style.top = event.clientY - (event.clientY - target.getBoundingClientRect().top) + 'px';
+    target.style.left = event.pageX - (event.clientX - target.getBoundingClientRect().left) + 'px';
+    target.style.top = event.pageY - (event.clientY - target.getBoundingClientRect().top) + 'px';
 
     if (target.classList.contains('inContainer')) {
       target.classList.remove('inContainer')
