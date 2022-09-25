@@ -52,13 +52,25 @@ export class PropertiesService {
   }
 
   openPanel() {
-    const panel = document.getElementById('propertiesPanel')
+    const panel = document.getElementById('propertiesPanel') as HTMLElement
+    const workField = document.querySelector('app-working-field') as HTMLElement
+
+    workField.style.width = '70%'
+    workField.style.float = 'right'
+    workField.style.marginRight = '15%'
+
     panel.style.width = '15%'
     panel.style.borderLeft = '1px solid #2C3740'
   }
 
   closePanel() {
     const panel = document.getElementById('propertiesPanel')
+    const workField = document.querySelector('app-working-field') as HTMLElement
+
+    workField.style.width = '85%'
+    workField.style.float = 'right'
+    workField.style.marginRight = '0'
+
     panel.style.width = '0'
     panel.style.borderLeft = '0'
   }
