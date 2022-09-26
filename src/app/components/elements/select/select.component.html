@@ -4,13 +4,13 @@
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
   [exclude]="this.propertyService.excludeClickOutside"
-  [excludeBeforeClick] = 'true'
+  [excludeBeforeClick]='true'
 >
   <div *ngIf="this.displayResize" class="resizer ne" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer nw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer sw" (mousedown)="resizeComponent($event)"></div>
   <div *ngIf="this.displayResize" class="resizer se" (mousedown)="resizeComponent($event)"></div>
-  <select [style]="getStyle()" onmouseout="this.size = 1" onmouseover="this.size=this.length;">
+  <select [style]="getStyle()">
     <option *ngFor="let option of this.propertiesData.selectOption">{{option}}</option>
   </select>
 </div>

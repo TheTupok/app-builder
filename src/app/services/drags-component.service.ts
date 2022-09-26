@@ -14,11 +14,6 @@ export class DragsService {
     target.style.left = event.clientX - containerX - shiftX + 'px'
     target.style.top = event.clientY - containerY - shiftY + 'px'
 
-    if (field.classList.contains('pageField')) {
-      target.style.left = event.clientX - containerX - shiftX - 1 + 'px'
-      target.style.top = event.clientY - containerY - shiftY - 1 + 'px'
-    }
-
     if (field.classList.contains('container')) {
       target.classList.remove('inWorkingArea')
       target.classList.add('inContainer')
@@ -66,13 +61,13 @@ export class DragsService {
     moveAt(event.pageX, event.pageY);
 
     function moveAt(pageX: number, pageY: number) {
+      target.style.cursor = 'move'
       target.style.left = pageX - shiftX + 'px';
       target.style.top = pageY - shiftY + 'px';
     }
 
     function onMouseMove(event: MouseEvent) {
       moveAt(event.pageX, event.pageY);
-      target.style.cursor = 'move'
     }
 
     document.addEventListener('mousemove', onMouseMove);

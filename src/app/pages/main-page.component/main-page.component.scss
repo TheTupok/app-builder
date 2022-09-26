@@ -70,6 +70,20 @@ app-properties {
     }
   }
 
+  .parse-to-pdf-btn {
+    padding-left: 0.5em;
+    height: 100%;
+    float: right;
+
+    button {
+      @extend %verticalAlightElement;
+      height: 80%;
+      width: 2em;
+      box-sizing: border-box;
+      border: 1px solid $borderColor;
+    }
+  }
+
   .localization {
     padding-left: 0.5em;
     height: 100%;

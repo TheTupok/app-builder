@@ -32,6 +32,13 @@ export class WorkingFieldComponent implements OnInit {
 
   public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
     if (event.button == 0) {
+      if (target.tagName == "APP-SELECT") {
+        const shiftX = event.clientX - target.getBoundingClientRect().right
+        const targetWidth = Number(target.style.width.replace('px', ''))
+        if(((targetWidth + shiftX) / targetWidth) > 0.8){
+          return
+        }
+      }
       this.countTarget++
       if (this.countTarget == 1) {
         setTimeout(() => {

@@ -10,6 +10,13 @@
       <i class="fa-solid fa-info fa-la"></i>
     </button>
   </div>
+  <div class="parse-to-pdf-btn">
+    <button
+      title="{{'footer.titleParseToPdf' | translate}}"
+      (click)="toPDF()">
+      <i class="fa-regular fa-file-pdf fa-la"></i>
+    </button>
+  </div>
   <div class="localization">
     <form [formGroup]="localizationForm">
       <select formControlName="language" title="{{'footer.titleLocalization' | translate}}">

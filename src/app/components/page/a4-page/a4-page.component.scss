@@ -1,17 +1,19 @@
 .page {
-
+  position: relative;
+  height: 90vh;
+  width: 64vh;
   align-self: center;
-  width: 100%;
+  margin: 4vh auto;
 }
 
 .pageField {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  height: 100%;
+  width: 100%;
   background-color: #EBF0F2;
-  position: relative;
-  margin: 4vh auto;
   border: 1px solid #4086ff;
-  height: 90vh;
-  width: 64vh;
 }
 
 .horizontalLine {

@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {TranslateService} from "@ngx-translate/core";
 import {environment} from "../../../environments/environment";
+import {ParserHTMLService} from "../../services/parseHtmlToPdf.service";
 
 
 @Component({
@@ -25,7 +26,8 @@ export class MainPageComponent implements OnInit {
     private propertiesService: PropertiesService,
     public dialog: MatDialog,
     private fb: FormBuilder,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private parseHTMLService: ParserHTMLService
   ) {
   }
 
@@ -67,5 +69,9 @@ export class MainPageComponent implements OnInit {
 
   mouseDown() {
     this.propertiesService.closePanel()
+  }
+
+  toPDF() {
+    this.parseHTMLService.parseHtmlToPdf()
   }
 }

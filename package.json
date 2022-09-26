@@ -25,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "jspdf": "^2.5.1",
     "ng-click-outside2": "^11.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
