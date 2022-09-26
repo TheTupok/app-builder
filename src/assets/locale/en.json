@@ -1,0 +1,54 @@
+{
+  "element-area": {
+    "Label": "Label",
+    "Input": "Input",
+    "Button": "Button",
+    "Container": "Container",
+    "Textarea": "Textarea",
+    "Select": "Select",
+    "Image": "Image"
+  },
+  "properties": {
+    "TextContent": "Text",
+    "FontSize": "Font size",
+    "FontFamily": "Font Family",
+    "Bold": "Bold",
+    "Cursive": "Cursive",
+    "Underlined": "Underlined",
+    "ColorText": "Color text",
+    "BackgroundColor": "Background color",
+    "BackgroundColorHover": "Background color Hover",
+    "BackgroundColorFocus": "Background color Focus",
+    "Border": "Border",
+    "BorderRadius": "Border radius",
+    "Placeholder": "Placeholder",
+    "AddOptionSelect": "Add option select",
+    "DeleteOptionSelect": "Delete option select",
+    "AltImage": "Alt image",
+    "UpdateImage": "Update image"
+  },
+  "footer": {
+    "titleInfo": "Info",
+    "titleNewPage": "New page",
+    "titleLocalization": "Localization"
+  },
+  "infoApp": {
+    "instructions": "Instructions",
+    "header": {
+      "addComponent": "Add component",
+      "dragComponent": "Drag component",
+      "resizeComponent": "Resize component",
+      "propertiesComponent": "Properties component",
+      "addElementInField": "Ability to add element to a container"
+    },
+    "content": {
+      "aboutApp": "Application can add, resize, and remove components.",
+      "addComponent": "You can add components by selecting the desired template and dragging it to the workspace.",
+      "dragComponent": "To move components in the workplace, you must hold the left mouse button, which will make the element movable.",
+      "resizeComponent": "At each corner there are elements that make it possible to increase the component.",
+      "propertiesComponent": "You can change some properties of components. Each element has different properties. You can open the properties by clicking the left mouse button.",
+      "addElementInField": "By creating a container, you can place other objects in it. They will be attached to this container, and when the container is moved, all components inside will also move. Components can be detached from the container by simply pulling it out."
+    },
+    "buttonClose": "Close"
+  }
+}

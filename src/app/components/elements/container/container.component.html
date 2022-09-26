@@ -1,6 +1,6 @@
 <div
   [style]="getStyle()"
-  (mousedown)="setData()"
+  (mouseup)="setData()"
   [clickOutsideEvents]="'mouseup'"
   (clickOutside)="clickOutside()"
   [exclude]="this.propertyService.excludeClickOutside"

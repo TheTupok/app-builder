@@ -6,15 +6,15 @@
   <form *ngIf="propertiesData" [formGroup]="editComponentForm">
     <ul>
       <li *ngIf="getStyle('textContent')">
-        <p>Text Content</p>
+        <p>{{"properties.TextContent" | translate}}</p>
         <input formControlName="textContent" type="text">
       </li>
       <li *ngIf="getStyle('fontSize')">
-        <p>Font Size</p>
+        <p>{{'properties.FontSize' | translate}}</p>
         <input formControlName="fontSize" type="text">
       </li>
       <li *ngIf="getStyle('fontFamily')">
-        <p>Font Family</p>
+        <p>{{"properties.FontFamily" | translate}}</p>
         <select formControlName="fontFamily">
           <option value="Arial, sans-serif">Arial</option>
           <option value="Courier, monospace">Courier</option>
@@ -22,50 +22,46 @@
         </select>
       </li>
       <li *ngIf="getStyle('textModification')">
-        <p>Bold</p>
+        <p>{{"properties.Bold" | translate}}</p>
         <input formControlName="fontWeight" type="checkbox">
-        <p>Cursive</p>
+        <p>{{"properties.Cursive" | translate}}</p>
         <input formControlName="fontStyle" type="checkbox">
-        <p>Underlined</p>
+        <p>{{"properties.Underlined" | translate}}</p>
         <input formControlName="textDecoration" type="checkbox">
       </li>
       <li *ngIf="getStyle('color')">
-        <p>Color Text</p>
+        <p>{{"properties.ColorText" | translate}}</p>
         <input formControlName="color" type="color" value="#000000">
       </li>
       <li *ngIf="getStyle('backgroundColor')">
-        <p>Background Color</p>
+        <p>{{"properties.BackgroundColor" | translate}}</p>
         <input formControlName="backgroundColorNormal" type="color" value="#ffffff">
       </li>
       <li *ngIf="getStyle('backgroundColorHover')">
-        <p>Background Color Hover</p>
+        <p>{{"properties.BackgroundColorHover" | translate}}</p>
         <input formControlName="backgroundColorHover" type="color" value="#ffffff">
       </li>
       <li *ngIf="getStyle('backgroundColorFocus')">
-        <p>Background Color Focus</p>
+        <p>{{"properties.BackgroundColorFocus" | translate}}</p>
         <input formControlName="backgroundColorFocus" type="color" value="#ffffff">
       </li>
       <li *ngIf="getStyle('border')">
-        <p>Border</p>
+        <p>{{"properties.Border" | translate}}</p>
         <input formControlName="border" type="text">
       </li>
       <li *ngIf="getStyle('borderRadius')">
-        <p>Border Radius</p>
+        <p>{{"properties.BorderRadius" | translate}}</p>
         <input formControlName="borderRadius" type="text">
       </li>
-      <li *ngIf="getStyle('displayResize')">
-        <p>Display Resize</p>
-        <input formControlName="displayResize" type="checkbox">
-      </li>
       <li *ngIf="getStyle('placeholder')">
-        <p>Placeholder</p>
+        <p>{{"properties.Placeholder" | translate}}</p>
         <input formControlName="placeholder" type="text">
       </li>
       <li *ngIf="getStyle('optionModification')">
-        <p>Add option select</p>
+        <p>{{"properties.AddOptionSelect" | translate}}</p>
         <input formControlName="nameOption" type="text" class="input-option">
         <button (click)="addOptionSelect()" class="input-btn">+</button>
-        <p>Delete option select</p>
+        <p>{{"properties.DeleteOptionSelect" | translate}}</p>
         <select formControlName="selectOptionDelete" class="delete-option">
           <option value="{{option}}" *ngFor="let option of this.propertiesData['selectOption']">
             {{option}}
@@ -74,10 +70,10 @@
         <button (click)="deleteOptionSelect()" class="input-btn">-</button>
       </li>
       <li *ngIf="getStyle('AltSrcImage')">
-        <p>Alt image</p>
+        <p>{{"properties.AltImage" | translate}}</p>
         <input formControlName="altImage" type="text">
         <label class="custom-file-update" (change)="imagePreview($event)">
-          <input type="file" accept="image/*" class="input-file">Update image</label>
+          <input type="file" accept="image/*" class="input-file">{{"properties.UpdateImage" | translate}}</label>
       </li>
     </ul>
   </form>

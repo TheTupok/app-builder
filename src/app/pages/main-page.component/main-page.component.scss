@@ -58,7 +58,6 @@ app-properties {
     height: 100%;
     float: right;
     transition: 0.3s;
-    border-left: 1px solid $borderColor;
 
     button {
       @extend %verticalAlightElement;
@@ -68,6 +67,20 @@ app-properties {
       border: 1px solid $borderColor;
       &:hover {background-color: #90b9ff;}
       &:active {background-color: #4086ff;}
+    }
+  }
+
+  .localization {
+    padding-left: 0.5em;
+    height: 100%;
+    border-left: 1px solid $borderColor;
+    float: right;
+
+    select {
+      margin-top: 10%;
+      box-sizing: border-box;
+      height: 80%;
+      width: 3.2em;
     }
   }
 

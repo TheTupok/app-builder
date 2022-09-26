@@ -1,25 +1,20 @@
 <div class="main-wrapper-info-modal">
-  <p class="instruction">Instructions</p>
+  <p class="instruction">{{"infoApp.instructions" | translate}}</p>
   <h1 mat-dialog-title>App Builder</h1>
-  <div mat-dialog-content>Application can add, resize, and remove components. You can add components by selecting the
-    desired template and dragging it to the workspace.
+  <div mat-dialog-content>{{"infoApp.content.aboutApp" | translate}}
   </div>
-  <h1 mat-dialog-title>Add component</h1>
-  <div mat-dialog-content>To add an element, click and drag any element from the left area to the workspace</div>
-  <h1 mat-dialog-title>Drag components</h1>
-  <div mat-dialog-content>To move components in the workplace, you must hold the left mouse button, which will make the
-    element movable
+  <h1 mat-dialog-title>{{"infoApp.header.addComponent" | translate}}</h1>
+  <div mat-dialog-content>{{"infoApp.content.addComponent" | translate}}</div>
+  <h1 mat-dialog-title>{{"infoApp.header.dragComponent" | translate}}</h1>
+  <div mat-dialog-content>{{"infoApp.content.dragComponent" | translate}}
   </div>
-  <h1 mat-dialog-title>Resize components</h1>
-  <div mat-dialog-content>At each corner there are elements that make it possible to increase the component</div>
-  <h1 mat-dialog-title>Component Properties</h1>
-  <div mat-dialog-content>You can change some properties of components. Each element has different properties. You can
-    open the properties by clicking the left mouse button.
+  <h1 mat-dialog-title>{{"infoApp.header.resizeComponent" | translate}}</h1>
+  <div mat-dialog-content>{{"infoApp.content.resizeComponent" | translate}}</div>
+  <h1 mat-dialog-title>{{"infoApp.header.propertiesComponent" | translate}}</h1>
+  <div mat-dialog-content>{{"infoApp.content.propertiesComponent" | translate}}
   </div>
-  <h1 mat-dialog-title>Ability to add elements to a container</h1>
-  <div mat-dialog-content>By creating a container, you can place other objects in it. They will be attached to this
-    container, and when the container is moved, all components inside will also move. Components can be detached from the
-    container by simply pulling it out
+  <h1 mat-dialog-title>{{"infoApp.header.addElementInField" | translate}}</h1>
+  <div mat-dialog-content>{{"infoApp.content.addElementInField" | translate}}
   </div>
-  <button mat-button [mat-dialog-close]="undefined">Close</button>
+  <button mat-button [mat-dialog-close]="undefined">{{"infoApp.buttonClose" | translate}}</button>
 </div>

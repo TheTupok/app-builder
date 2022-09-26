@@ -20,10 +20,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {InfoModalComponent} from './components/modals/info-modal/info-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {SelectComponent} from './components/elements/select/select.component';
-import { ImageComponent } from './components/elements/image/image.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ImageComponent} from './components/elements/image/image.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgClickOutsideDirective} from "ng-click-outside2";
-import { A4PageComponent } from './components/page/a4-page/a4-page.component';
+import {A4PageComponent} from './components/page/a4-page/a4-page.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
 
 @NgModule({
@@ -53,10 +56,23 @@ import { A4PageComponent } from './components/page/a4-page/a4-page.component';
     MatButtonModule,
     MatDialogModule,
     FontAwesomeModule,
-    NgClickOutsideDirective
+    NgClickOutsideDirective,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      useDefaultLang: false,
+    })
   ],
   providers: [FormBuilder, WorkingFieldComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+}
+
+export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
+  return new TranslateHttpLoader(http, './assets/locale/', '.json');
 }

@@ -99,7 +99,7 @@ export class DragsService {
         }
         this.addElToField(target, elemBelow, event, shiftX, shiftY)
       } else {
-        this.propertiesService.closePanel()
+        setTimeout(() => this.propertiesService.closePanel(), 100)
         target.remove()
       }
       document.removeEventListener('mousemove', onMouseMove);

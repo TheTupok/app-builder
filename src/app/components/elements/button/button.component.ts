@@ -48,7 +48,7 @@ export class ButtonComponent implements OnInit {
 
   public setData() {
     this.displayResize = true
-    this.conditions = 2
+    this.conditions = 1
     this.propertyService.setData(this.propertiesData)
   }
 
