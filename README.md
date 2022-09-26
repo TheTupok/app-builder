@@ -32,7 +32,7 @@ At the bottom right is a button for parsing worksheets into a PDF file. Also, th
 
 # Try the app yourself
 
-Pipeline is triggered and creates a new version of the application if there was a push build version
+Pipeline is triggered and creates a new version of the application if there was a push build app
 https://thetupok.github.io/app-builder/
 ![1test](https://user-images.githubusercontent.com/65355616/192362311-cd473d09-1c45-47dc-b789-813e59a0c60a.gif)
 ![2test](https://user-images.githubusercontent.com/65355616/192362321-0fc44175-a3f4-4e6f-a266-7cabaa37c5b9.gif)
