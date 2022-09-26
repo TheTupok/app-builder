@@ -73,7 +73,7 @@
         <p>{{"properties.AltImage" | translate}}</p>
         <input formControlName="altImage" type="text">
         <label class="custom-file-update" (change)="imagePreview($event)">
-          <input type="file" accept="image/*" class="input-file">{{"properties.UpdateImage" | translate}}</label>
+          <input type="file" accept="image/png, image/jpg, image/jpeg" class="input-file">{{"properties.UpdateImage" | translate}}</label>
       </li>
     </ul>
   </form>
