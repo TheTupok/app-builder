@@ -14,6 +14,7 @@ export class ResizeComponentService {
     this.isResizing = true;
     const currentResize = event.target as HTMLElement
     let ele: any = currentResize.parentNode.parentNode;
+    const minimumResizePx: number = 20
 
     const x = event.clientX;
     const y = event.clientY;
@@ -35,21 +36,29 @@ export class ResizeComponentService {
       const dy = e.clientY - y;
 
       if (currentResize.classList.contains('se')) {
-        ele.style.width = `${width + dx}px`;
-        ele.style.height = `${height + dy}px`;
+        if ((width + dx) > minimumResizePx) ele.style.width = `${width + dx}px`;
+        if ((height + dy) > minimumResizePx) ele.style.height = `${height + dy}px`;
       } else if (currentResize.classList.contains("sw")) {
-        ele.style.width = `${width - dx}px`;
-        ele.style.height = `${height + dy}px`;
-        ele.style.left = `${left + dx}px`
+        if ((height + dy) > minimumResizePx) ele.style.height = `${height + dy}px`;
+        if ((width - dx) > minimumResizePx) {
+          ele.style.width = `${width - dx}px`;
+          ele.style.left = `${left + dx}px`
+        }
       } else if (currentResize.classList.contains("ne")) {
-        ele.style.width = `${width + dx}px`;
-        ele.style.height = `${height - dy}px`;
-        ele.style.top = `${top + dy}px`;
+        if ((width + dx) > minimumResizePx) ele.style.width = `${width + dx}px`;
+        if ((height - dy) > minimumResizePx) {
+          ele.style.height = `${height - dy}px`;
+          ele.style.top = `${top + dy}px`;
+        }
       } else {
-        ele.style.width = `${width - dx}px`;
-        ele.style.height = `${height - dy}px`;
-        ele.style.top = `${top + dy}px`;
-        ele.style.left = `${left + dx}px`
+        if ((width - dx) > minimumResizePx) {
+          ele.style.width = `${width - dx}px`;
+          ele.style.left = `${left + dx}px`
+        }
+        if ((height - dy) > minimumResizePx) {
+          ele.style.height = `${height - dy}px`;
+          ele.style.top = `${top + dy}px`;
+        }
       }
     }
 
