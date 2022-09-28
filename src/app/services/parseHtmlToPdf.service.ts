@@ -6,11 +6,19 @@ import jsPDF from "jspdf";
   providedIn: 'root'
 })
 export class ParserHTMLService {
+
+  private resizers: HTMLCollection
+
   constructor() {
   }
 
   parseHtmlToPdf() {
     const pages = document.getElementsByClassName('pageField') as HTMLCollection
+    this.resizers = document.getElementsByClassName('resizer') as HTMLCollection
+
+    Array.prototype.forEach.call(this.resizers, (resizer: HTMLElement) => {
+      resizer.style.display = 'none'
+    })
 
     const list: any = []
 
@@ -31,6 +39,9 @@ export class ParserHTMLService {
       }));
     } else {
       Promise.all(list).then(() => {
+        Array.prototype.forEach.call(this.resizers, (resizer: HTMLElement) => {
+          resizer.style.display = ''
+        })
         pdf.save("test.pdf");
       }).catch(error => {
         console.log('error ', error);
