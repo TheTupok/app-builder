@@ -1,32 +1,7 @@
 <app-element-area
   (mousedown)="mouseClickEventComponent($event)"
 ></app-element-area>
-<app-working-field (click)="mouseDown()"
+<app-working-field (click)="mouseDown()" (scroll)="scrollPage()"
 ></app-working-field>
 <app-properties id="propertiesPanel"></app-properties>
-<div class="footer">
-  <div class="info-btn">
-    <button title="{{'footer.titleInfo' | translate}}" (click)="openDialogInfo()">
-      <i class="fa-solid fa-info fa-la"></i>
-    </button>
-  </div>
-  <div class="parse-to-pdf-btn">
-    <button
-      title="{{'footer.titleParseToPdf' | translate}}"
-      (click)="toPDF()">
-      <i class="fa-regular fa-file-pdf fa-la"></i>
-    </button>
-  </div>
-  <div class="localization">
-    <form [formGroup]="localizationForm">
-      <select formControlName="language" title="{{'footer.titleLocalization' | translate}}">
-        <option value="en">EN</option>
-        <option value="ru">RU</option>
-      </select>
-    </form>
-  </div>
-  <div class="page-setting">
-    <button title="{{'footer.titleNewPage' | translate}}" (click)="createNewPage()">
-      <i class="fa-solid fa-plus fa-la"></i></button>
-  </div>
-</div>
+<app-footer></app-footer>

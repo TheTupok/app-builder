@@ -1,0 +1,104 @@
+$borderColor: #2C3740;
+
+%verticalAlightElement {
+  position: relative;
+  margin: 0 0.3em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 2em;
+  background-color: #D0D8D9;
+  box-sizing: border-box;
+  border-top: 1px solid $borderColor;
+  z-index: 30;
+
+  .info-btn {
+    padding-left: 0.5em;
+    height: 100%;
+    float: right;
+    transition: 0.3s;
+
+    button {
+      @extend %verticalAlightElement;
+      height: 80%;
+      width: 1.5em;
+      box-sizing: border-box;
+      border: 1px solid $borderColor;
+
+      &:hover {
+        background-color: #90b9ff;
+      }
+
+      &:active {
+        background-color: #4086ff;
+      }
+    }
+  }
+
+  .parse-to-pdf-btn {
+    padding-left: 0.5em;
+    height: 100%;
+    float: right;
+
+    button {
+      @extend %verticalAlightElement;
+      height: 80%;
+      width: 2em;
+      box-sizing: border-box;
+      border: 1px solid $borderColor;
+    }
+  }
+
+  .localization {
+    padding-left: 0.5em;
+    height: 100%;
+    border-left: 1px solid $borderColor;
+    float: right;
+
+    select {
+      @extend %verticalAlightElement;
+      box-sizing: border-box;
+      height: 80%;
+      width: 3.2em;
+    }
+  }
+
+  .page-setting {
+    height: 100%;
+    float: right;
+
+    select {
+      @extend %verticalAlightElement;
+      height: 80%;
+    }
+
+    label {
+      display: inline-block;
+      @extend %verticalAlightElement;
+      font-size: 1em;
+    }
+
+    button {
+      @extend %verticalAlightElement;
+      height: 80%;
+      width: 1.5em;
+      box-sizing: border-box;
+      border: 1px solid $borderColor;
+      padding: 0;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #b0b0b0;
+      }
+
+      i {
+        margin: auto;
+      }
+    }
+  }
+}

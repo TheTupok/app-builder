@@ -27,6 +27,7 @@ import {A4PageComponent} from './components/page/a4-page/a4-page.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { FooterComponent } from './components/workspace/footer/footer.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
     InfoModalComponent,
     SelectComponent,
     ImageComponent,
-    A4PageComponent
+    A4PageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
