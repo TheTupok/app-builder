@@ -20,7 +20,7 @@
     "BackgroundColorHover": "Фоновый цвет при наведении",
     "BackgroundColorFocus": "Фоновый цвет при нажатии",
     "Border": "Граница",
-    "BorderRadius": "Радиус угол границ",
+    "BorderRadius": "Радиус границ",
     "Placeholder": "Плейсхолдер",
     "AddOptionSelect": "Добавить вариант",
     "DeleteOptionSelect": "Удалить вариант",
@@ -31,7 +31,8 @@
     "titleInfo": "Инфо",
     "titleNewPage": "Новая страница",
     "titleLocalization": "Локализация",
-    "titleParseToPdf": "Открыть в PDF"
+    "titleParseToPdf": "Открыть в PDF",
+    "page": "Страница"
   },
   "infoApp": {
     "instructions": "Инструкция",
