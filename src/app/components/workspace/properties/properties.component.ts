@@ -26,7 +26,7 @@ export class PropertiesComponent implements OnInit {
     'app-container': ['backgroundColor'],
     'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification'],
     'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
-    'app-image': ['border', 'AltSrcImage'],
+    'app-image': ['AltSrcImage'],
   }
 
   private clearForm: boolean = false

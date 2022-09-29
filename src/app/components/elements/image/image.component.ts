@@ -14,7 +14,6 @@ export class ImageComponent implements OnInit {
 
   public propertiesData: IDataProperties = {
     component: 'app-image',
-    border: '1px solid black',
     altImage: 'Add Image',
     srcImage: ''
   };
