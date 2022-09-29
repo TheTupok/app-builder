@@ -31,7 +31,8 @@
     "titleInfo": "Info",
     "titleNewPage": "New page",
     "titleLocalization": "Localization",
-    "titleParseToPdf": "Open in PDF"
+    "titleParseToPdf": "Open in PDF",
+    "page": "Page"
   },
   "infoApp": {
     "instructions": "Instructions",
