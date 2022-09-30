@@ -22,10 +22,17 @@ export class ParserHTMLService {
 
     const list: any = []
 
-    const widthPage = getComputedStyle(pages[0]).width.replace('px', '')
-    const heightPage = getComputedStyle(pages[0]).height.replace('px', '')
-    const doc = new jsPDF('p', 'px', [Number(widthPage), Number(heightPage)])
-    this.setOnePage(doc, 0, pages, list, Number(heightPage))
+    try {
+      const widthPage = getComputedStyle(pages[0]).width.replace('px', '')
+      const heightPage = getComputedStyle(pages[0]).height.replace('px', '')
+
+      const doc = new jsPDF('p', 'px', [Number(widthPage), Number(heightPage)])
+      this.setOnePage(doc, 0, pages, list, Number(heightPage))
+    } catch (error) {
+      if (error instanceof TypeError) {
+        console.log('[Error] - No pages exist!')
+      }
+    }
   }
 
   setOnePage(pdf: jsPDF, i: number, pages: any, list: Array<Promise<any>>, pageHeight: number): void {
@@ -42,7 +49,7 @@ export class ParserHTMLService {
         Array.prototype.forEach.call(this.resizers, (resizer: HTMLElement) => {
           resizer.style.display = ''
         })
-        pdf.save("test.pdf");
+        pdf.save("AppBuilder.pdf");
       }).catch(error => {
         console.log('error ', error);
       });
