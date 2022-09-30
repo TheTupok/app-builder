@@ -3,7 +3,7 @@
   height: 90vh;
   width: 64vh;
   align-self: center;
-  margin: 4vh auto;
+  margin: 0 auto 4vh auto;
 }
 
 .pageField {
@@ -17,6 +17,7 @@
 }
 
 .horizontalLine {
+  margin: 0;
   width: 100%;
   height: 0.1em;
   border-top: 1px dashed #90b9ff;

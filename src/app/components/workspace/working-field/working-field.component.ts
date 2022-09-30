@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, Renderer2, ViewContainerRef, ViewEncapsulation} from '@angular/core';
 import {LabelComponent} from "../../elements/label/label.component";
 import {DragsService} from "../../../services/drags-component.service";
 import {ContainerComponent} from "../../elements/container/container.component";
@@ -14,7 +14,8 @@ import {A4PageComponent} from "../../page/a4-page/a4-page.component";
 @Component({
   selector: 'app-working-field',
   templateUrl: './working-field.component.html',
-  styleUrls: ['./working-field.component.scss']
+  styleUrls: ['./working-field.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WorkingFieldComponent implements OnInit {
 

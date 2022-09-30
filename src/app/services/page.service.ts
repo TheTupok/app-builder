@@ -41,10 +41,12 @@ export class PageService {
 
   scrollPage(numberPage: number) {
     const workField = document.querySelector('app-working-field') as HTMLElement
-    const page = document.querySelector('app-a4-page') as HTMLElement
-    const pageHeight = page.getBoundingClientRect().height
+    const page = workField.querySelector('app-a4-page') as HTMLElement
 
-    workField.scrollTop = (numberPage - 1) * pageHeight
+    const pageHeight = page.getBoundingClientRect().height
+    const marginTop = Number(window.getComputedStyle(page).marginTop.replace('px', ''))
+
+    workField.scrollTop = (numberPage - 1) * (pageHeight + marginTop)
 
     this.scrolledPage = false
   }
