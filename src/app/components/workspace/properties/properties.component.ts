@@ -23,7 +23,7 @@ export class PropertiesComponent implements OnInit {
       'textContent', 'fontSize', 'backgroundColor', 'backgroundColorHover', 'backgroundColorFocus',
       'color', 'border', 'borderRadius', 'fontFamily', 'textModification'
     ],
-    'app-container': ['backgroundColor'],
+    'app-container': ['backgroundColor', 'border'],
     'app-textarea': ['fontSize', 'color', 'fontFamily', 'backgroundColor', 'textModification'],
     'app-select': ['fontSize', 'color', 'fontFamily', 'textModification', 'optionModification'],
     'app-image': ['AltSrcImage'],

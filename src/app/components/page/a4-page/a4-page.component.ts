@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-a4-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class A4PageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pageService: PageService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  deletePage(event: MouseEvent) {
+    this.pageService.deletePage(event)
+  }
 }

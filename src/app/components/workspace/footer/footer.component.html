@@ -1,19 +1,19 @@
 <form [formGroup]="footerForm">
   <div class="footer">
     <div class="info-btn">
-      <button title="{{'footer.titleInfo' | translate}}" (click)="openDialogInfo()">
+      <button title="{{'title.info' | translate}}" (click)="openDialogInfo()">
         <i class="fa-solid fa-info fa-la"></i>
       </button>
     </div>
     <div class="parse-to-pdf-btn">
       <button
-        title="{{'footer.titleParseToPdf' | translate}}"
+        title="{{'title.parseToPdf' | translate}}"
         (click)="toPDF()">
         <i class="fa-regular fa-file-pdf fa-la"></i>
       </button>
     </div>
     <div class="localization">
-      <select formControlName="language" title="{{'footer.titleLocalization' | translate}}">
+      <select formControlName="language" title="{{'title.localization' | translate}}">
         <option value="en">EN</option>
         <option value="ru">RU</option>
       </select>
@@ -27,7 +27,7 @@
           {{'footer.page' | translate}} {{this.pageService.getIndexPage(page)}}
         </option>
       </select>
-      <button title="{{'footer.titleNewPage' | translate}}" (click)="createNewPage()">
+      <button title="{{'title.newPage' | translate}}" (click)="createNewPage()">
         <i class="fa-solid fa-plus fa-la"></i></button>
     </div>
   </div>

@@ -50,4 +50,13 @@ export class PageService {
 
     this.scrolledPage = false
   }
+
+  deletePage(event: MouseEvent) {
+    const target = event.target as HTMLElement
+    const page = target.closest('app-a4-page')
+
+    page.remove()
+
+    setTimeout(() => this.setNumberPage(), 0)
+  }
 }

@@ -1,4 +1,11 @@
 {
+  "title": {
+    "info": "Info",
+    "newPage": "New page",
+    "localization": "Localization",
+    "parseToPdf": "Open in PDF",
+    "deletePage": "Delete page"
+  },
   "element-area": {
     "Label": "Label",
     "Input": "Input",
@@ -28,10 +35,6 @@
     "UpdateImage": "Update image"
   },
   "footer": {
-    "titleInfo": "Info",
-    "titleNewPage": "New page",
-    "titleLocalization": "Localization",
-    "titleParseToPdf": "Open in PDF",
     "page": "Page"
   },
   "infoApp": {

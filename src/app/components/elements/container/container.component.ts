@@ -14,7 +14,8 @@ export class ContainerComponent implements OnInit {
 
   public propertiesData: IDataProperties = {
     component: 'app-container',
-    backgroundColor: '#EBF0F2'
+    backgroundColor: '#EBF0F2',
+    border: '1px dashed black'
   };
 
   constructor(public propertyService: PropertiesService,

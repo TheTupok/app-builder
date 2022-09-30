@@ -4,6 +4,24 @@
   width: 64vh;
   align-self: center;
   margin: 0 auto 4vh auto;
+
+  .delete-page {
+    border: 0.5px solid black;
+    text-align: center;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #f5f5f5;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    transform: translate(50%, -50%);
+    transition: 0.3s;
+
+    &:hover {
+      background: #f44336;
+    }
+  }
 }
 
 .pageField {

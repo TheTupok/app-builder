@@ -1,4 +1,11 @@
 {
+  "title": {
+    "info": "Инфо",
+    "newPage": "Новая страница",
+    "localization": "Изменить язык",
+    "parseToPdf": "Открыть в PDF",
+    "deletePage": "Удалить страницу"
+  },
   "element-area": {
     "Label": "Текст",
     "Input": "Поле ввода",
@@ -28,10 +35,6 @@
     "UpdateImage": "Добавить изображение"
   },
   "footer": {
-    "titleInfo": "Инфо",
-    "titleNewPage": "Новая страница",
-    "titleLocalization": "Локализация",
-    "titleParseToPdf": "Открыть в PDF",
     "page": "Страница"
   },
   "infoApp": {
