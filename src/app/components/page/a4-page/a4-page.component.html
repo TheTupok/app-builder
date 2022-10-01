@@ -3,6 +3,7 @@
     class="fa-solid fa-xmark delete-page fa-la"
     title="{{'title.deletePage' | translate}}"
     (click)="deletePage($event)"
+    *ngIf="this.pageService.getAllPages().length > 1"
   ></i>
   <div class="pageField">
 

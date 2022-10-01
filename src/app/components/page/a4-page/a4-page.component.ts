@@ -9,7 +9,7 @@ import { PageService } from 'src/app/services/page.service';
 export class A4PageComponent implements OnInit {
 
   constructor(
-    private pageService: PageService
+    public pageService: PageService
   ) { }
 
   ngOnInit(): void {
