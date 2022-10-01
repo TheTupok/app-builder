@@ -16,6 +16,7 @@ export interface IDataProperties {
   altImage?: string
   srcImage?: string
   placeholder?: string
+  inputType?: string
   nameOption?: string
   selectOption?: string[]
   selectOptionDelete?: string

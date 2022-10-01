@@ -33,10 +33,10 @@ export class WorkingFieldComponent implements OnInit {
 
   public mouseClickEventComponent(event: MouseEvent, target: HTMLElement) {
     if (event.button == 0) {
-      if (target.tagName == "APP-SELECT") {
+      if (target.tagName == "APP-SELECT" || target.tagName == "APP-INPUT") {
         const shiftX = event.clientX - target.getBoundingClientRect().right
         const targetWidth = Number(target.style.width.replace('px', ''))
-        if(((targetWidth + shiftX) / targetWidth) > 0.8){
+        if (targetWidth - (targetWidth - shiftX) > -20) {
           return
         }
       }
@@ -93,6 +93,7 @@ export class WorkingFieldComponent implements OnInit {
     if (target.getAttribute('data-type') == 'app-input') {
       const component = this.viewContainerRef.createComponent(InputComponent)
       this.addMainPropertiesComponent(component.location.nativeElement)
+      this.renderer.setStyle(component.location.nativeElement, 'width', '100px')
       return component.location.nativeElement
     }
     if (target.getAttribute('data-type') == 'app-textarea') {

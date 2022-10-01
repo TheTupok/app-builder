@@ -22,11 +22,12 @@ export class InputComponent implements OnInit {
 
   public propertiesData: IDataProperties = {
     component: 'app-input',
-    placeholder: 'placeholder',
     fontFamily: 'Arial, sans-serif',
     fontWeight: '',
     fontStyle: '',
-    textDecoration: ''
+    textDecoration: '',
+    placeholder: 'placeholder',
+    inputType: 'text'
   };
 
   resizeComponent(event: MouseEvent) {

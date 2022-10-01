@@ -53,7 +53,17 @@
         <p>{{"properties.BorderRadius" | translate}}</p>
         <input formControlName="borderRadius" type="text">
       </li>
-      <li *ngIf="getStyle('placeholder')">
+      <li *ngIf="getStyle('inputType')">
+        <p>{{"properties.inputType" | translate}}</p>
+        <select formControlName="inputType">
+          <option value="text">{{"properties.inputText" | translate}}</option>
+          <option value="number">{{"properties.inputNumber" | translate}}</option>
+          <option value="date">{{"properties.inputDate" | translate}}</option>
+          <option value="time">{{"properties.inputTime" | translate}}</option>
+        </select>
+      </li>
+      <li
+        *ngIf="getStyle('placeholder') && (this.propertiesData.inputType == 'text' || this.propertiesData.inputType == 'number')">
         <p>{{"properties.Placeholder" | translate}}</p>
         <input formControlName="placeholder" type="text">
       </li>
@@ -73,7 +83,8 @@
         <p>{{"properties.AltImage" | translate}}</p>
         <input formControlName="altImage" type="text">
         <label class="custom-file-update" (change)="imagePreview($event)">
-          <input type="file" accept="image/png, image/jpg, image/jpeg" class="input-file">{{"properties.UpdateImage" | translate}}</label>
+          <input type="file" accept="image/png, image/jpg, image/jpeg"
+                 class="input-file">{{"properties.UpdateImage" | translate}}</label>
       </li>
     </ul>
   </form>
