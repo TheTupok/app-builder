@@ -97,7 +97,7 @@ export class PropertiesComponent implements OnInit {
     this.propertiesService.setData(this.propertiesData)
   }
 
-  imagePreview(event: any) {
+  imagePreview(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     const reader = new FileReader();
     reader.onload = () => {

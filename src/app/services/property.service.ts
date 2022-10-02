@@ -19,6 +19,7 @@ export class PropertiesService {
   private count = 0
 
   setData(data: IDataProperties) {
+    // a timer to select the first item under the mouse. Without a timer, the last one will be selected
     this.count++
     if (this.count == 1) {
       setTimeout(() => {
@@ -56,7 +57,6 @@ export class PropertiesService {
     const workField = document.querySelector('app-working-field') as HTMLElement
 
     workField.style.width = '70%'
-    workField.style.float = 'right'
     workField.style.marginRight = '15%'
 
     panel.style.width = '15%'
@@ -68,7 +68,6 @@ export class PropertiesService {
     const workField = document.querySelector('app-working-field') as HTMLElement
 
     workField.style.width = '85%'
-    workField.style.float = 'right'
     workField.style.marginRight = '0'
 
     panel.style.width = '0'

@@ -40,6 +40,8 @@ export class WorkingFieldComponent implements OnInit {
           return
         }
       }
+      //the timer is needed in order for the drag to work for the first element under the mouse.
+      // Without the timer, the drag will be for all elements
       this.countTarget++
       if (this.countTarget == 1) {
         setTimeout(() => {
