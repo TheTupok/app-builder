@@ -60,7 +60,9 @@ export class FooterComponent implements OnInit {
   }
 
   openDialogInfo() {
-    this.dialog.open(InfoModalComponent);
+    this.dialog.open(InfoModalComponent, {
+      height: '95%',
+    });
   }
 
   toPDF() {

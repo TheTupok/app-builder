@@ -24,7 +24,8 @@
           [value]="this.pageService.getIndexPage(page)"
           *ngFor="let page of this.pageService.getAllPages()"
         >
-          {{'footer.page' | translate}} {{this.pageService.getIndexPage(page)}}
+          {{'footer.page' | translate}}
+          {{this.pageService.getIndexPage(page) + '/' + this.pageService.getAllPages().length}}
         </option>
       </select>
       <button title="{{'title.newPage' | translate}}" (click)="createNewPage()">
